@@ -1,30 +1,5 @@
 <?php
 
-// ACF OPTIONS PAGE
-if( function_exists('acf_add_options_page') ) {
-	
-	acf_add_options_page(array(
-		'page_title' 	=> 'Theme General Settings',
-		'menu_title'	=> 'Theme Settings',
-		'menu_slug' 	=> 'theme-general-settings',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> false
-	));
-	
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Theme Header Settings',
-		'menu_title'	=> 'Header',
-		'parent_slug'	=> 'theme-general-settings',
-	));
-	
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Theme Footer Settings',
-		'menu_title'	=> 'Footer',
-		'parent_slug'	=> 'theme-general-settings',
-	));
-	
-}
-
 add_action( 'after_setup_theme', 'geoheritage_theme_setup' );
 function geoheritage_theme_setup() {
 
@@ -34,15 +9,15 @@ function geoheritage_theme_setup() {
 	load_theme_textdomain( 'geoheritage', get_template_directory() . '/languages' );
 
 	/*
-		* Let WordPress manage the document title.
-		* This theme does not use a hard-coded <title> tag in the document head,
-		* WordPress will provide it for us.
-		*/
+	* Let WordPress manage the document title.
+	* This theme does not use a hard-coded <title> tag in the document head,
+	* WordPress will provide it for us.
+	*/
 	add_theme_support( 'title-tag' );
 
 	register_nav_menus( array(
 		'main_menu' => __( 'Головне меню', 'geoheritage' ),
-		'footer_menu' => __( 'Меню в футері', 'geoheritage' ),
+		'footer_menu' => __( 'Меню футера', 'geoheritage' ),
 	) );
 
 	/*
@@ -91,7 +66,6 @@ function geoheritage_theme_setup() {
 	);
 
 	add_theme_support( 'responsive-embeds' );
-
 	add_theme_support( 'custom-line-height' );
 
 }
@@ -118,14 +92,6 @@ function geoheritage_enqueue_script() {
 	wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/script.js', array(), wp_get_theme()->get( 'Version' ), true );
 }
 
-// add_filter( 'upload_mimes', 'allows_to_upload_file_types' );
-// function allows_to_upload_file_types( $mime_types ){
-// 	$mime_types['svg'] = 'image/svg+xml';
-// 	$mime_types['svgz'] = 'image/svg+xml'; 
-// 	$mime_types['glb'] = 'file/glb+xml';
-// 	return $mime_types;
-// }
-
 //add SVG to allowed file uploads
 function add_file_types_to_uploads($file_types){
 
@@ -134,7 +100,8 @@ function add_file_types_to_uploads($file_types){
 	$new_filetypes['glb'] = 'file/glb+xml';
 	$file_types = array_merge($file_types, $new_filetypes );
 
-	return $file_types; 
+	return $file_types;
+	
 } 
 add_action('upload_mimes', 'add_file_types_to_uploads');
 

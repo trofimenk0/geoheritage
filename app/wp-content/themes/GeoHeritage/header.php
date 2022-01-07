@@ -16,8 +16,7 @@
     
     <?php wp_head(); ?>
   </head>
-  <body <?php body_class( $class ); ?>>
-
+  <body>
 
     <div id="preloader">
       <svg class="pl" width="240" height="240" viewBox="0 0 240 240">
