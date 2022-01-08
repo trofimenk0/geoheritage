@@ -1,0 +1,35 @@
+.header {
+    z-index: 2;
+    padding: 20px 0;
+    position: relative;
+    // box-shadow: 0 30px 60px 0 rgb(23 23 23 / 4%);
+
+    &__container {
+        width: 100%;
+        max-width: 1600px;
+        margin: auto;
+        @include flex(row, center, space-between, wrap);
+    }
+
+    .custom-logo-link {
+        height: 60px;
+        display: block;
+    }
+
+    .custom-logo {
+        width: auto;
+        height: 100%;
+        transition: all 0.3s;
+    }
+
+    &__primaryMenu {
+        gap: 60px;
+        @include flex(row, center, center, wrap);
+
+        a {
+            color: #000;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+    }
+}

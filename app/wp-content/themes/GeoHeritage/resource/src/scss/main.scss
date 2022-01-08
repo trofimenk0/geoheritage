@@ -1,1 +1,7 @@
 @import "common.scss";
+
+// import sections styles
+@import "sections/header";
+
+// import mixins
+@import "mixins/flex";
