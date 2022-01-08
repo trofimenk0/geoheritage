@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>
-      <?php 
+      <?php
         if ( is_front_page() || is_single() ) {
           the_title();
         } else if ( is_category() ) {
@@ -27,19 +27,15 @@
       </svg>
     </div> -->
     
-    <header id="header">
+    <header class="header">
 
-      <div class="container">
+      <div class="header__container">
         <?php the_custom_logo(); ?>
 
-        <nav id="mainMenu">
-
-
-          <?php 
-
-          $menuArgs = array(
-            'theme_location'  => 'Головне меню',
-            'menu'            => 'Головне меню', 
+        <nav class="header__mainMenu mainMenu">
+          <?php $menuArgs = array(
+            'theme_location'  => 'Primary menu',
+            'menu'            => 'Primary menu', 
             'container'       => false, 
             'container_class' => '', 
             'container_id'    => '',
@@ -59,7 +55,7 @@
           echo strip_tags(wp_nav_menu( $menuArgs ), '<a>' ); ?>
         </nav>
 
-        <button id="btnMobileMenu">
+        <!-- <button id="btnMobileMenu">
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="5" y="29" width="30" height="7" rx="1" fill="url(#paint0_linear)"/>
             <rect x="5" y="16" width="30" height="7" rx="1" fill="url(#paint1_linear)"/>
@@ -116,10 +112,7 @@
             </linearGradient>
             </defs>
           </svg>
-        </button>
+        </button> -->
       </div>
 
-
     </header>
-
-    <main id="content">

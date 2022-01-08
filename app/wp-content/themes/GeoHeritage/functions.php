@@ -15,8 +15,8 @@ function geoheritage_theme_setup() {
 	add_theme_support( 'title-tag' );
 
 	register_nav_menus( array(
-		'main_menu' => __( 'Головне меню', 'geoheritage' ),
-		'footer_menu' => __( 'Меню футера', 'geoheritage' ),
+		'main_menu' => __( 'Primary menu', 'geoheritage' ),
+		'footer_menu' => __( 'Footer menu', 'geoheritage' ),
 	) );
 
 	/*
