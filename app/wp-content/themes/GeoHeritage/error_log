@@ -1,8 +1,0 @@
-[04-Sep-2021 13:05:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/geoherit/public_html/wp-content/themes/GeoHeritage/index.php:1
-Stack trace:
-#0 {main}
-  thrown in /home/geoherit/public_html/wp-content/themes/GeoHeritage/index.php on line 1
-[04-Sep-2021 13:05:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/geoherit/public_html/wp-content/themes/GeoHeritage/index.php:1
-Stack trace:
-#0 {main}
-  thrown in /home/geoherit/public_html/wp-content/themes/GeoHeritage/index.php on line 1
