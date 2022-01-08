@@ -71,7 +71,6 @@ function geoheritage_theme_setup() {
 
 add_action( 'wp_enqueue_scripts', 'geoheritage_enqueue_style' ); 
 function geoheritage_enqueue_style() {
-	wp_enqueue_style( 'lightgallery', 'https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css', true );
     wp_enqueue_style( 'style', get_template_directory_uri() . '/assets/css/style.css', true );
 }
 
@@ -81,14 +80,9 @@ function geoheritage_enqueue_script() {
 	wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js');
 	wp_enqueue_script( 'jquery' );
-	
-	wp_enqueue_script( 'smooth-scroll', '//cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js', array(), wp_get_theme()->get( 'Version' ), true );
-	wp_enqueue_script( 'stats', '//mrdoob.github.io/stats.js/build/stats.min.js', array(), wp_get_theme()->get( 'Version' ), true );
-	wp_enqueue_script( 'lightgallery', 'https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js', array(), wp_get_theme()->get( 'Version' ), true );
-	wp_enqueue_script( 'threejs', 'https://threejs.org/build/three.js', array(), wp_get_theme()->get( 'Version' ), true );
-	wp_enqueue_script( 'gltfloader', 'https://threejs.org/examples/js/loaders/GLTFLoader.js', array(), wp_get_theme()->get( 'Version' ), true );
-    wp_enqueue_script( 'parallax', 'https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js', array(), wp_get_theme()->get( 'Version' ), true );
+
 	wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/script.js', array(), wp_get_theme()->get( 'Version' ), true );
+
 }
 
 //add SVG to allowed file uploads
@@ -105,13 +99,13 @@ function add_file_types_to_uploads($file_types){
 add_action('upload_mimes', 'add_file_types_to_uploads');
 
 // Post Excerpt
-add_filter( 'excerpt_length', function(){
+add_filter( 'excerpt_length', function() {
 	return 40;
 } );
 
-add_filter('excerpt_more', function($more) {
+add_filter( 'excerpt_more', function( $more ) {
 	return '...';
-});
+} );
 
 // BREADCRUMBS
 function geoHeritageBreadcrumbs(){
@@ -185,5 +179,3 @@ function geoHeritageBreadcrumbs(){
 	}
  
 }
-
-
