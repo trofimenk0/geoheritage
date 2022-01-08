@@ -1,5 +1,4 @@
 <?php
-
 add_action( 'after_setup_theme', 'geoheritage_theme_setup' );
 function geoheritage_theme_setup() {
 
