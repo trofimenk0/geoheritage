@@ -1,4 +1,4 @@
-@mixin flex-variant($display, $direction: false, $align: false, $justify: false, $wrap: false) {
+@mixin flex-variant($display, $direction: false, $align: false, $justify: false, $wrap: false, $gap: false) {
     display: $display;
 
     @if $direction {
@@ -17,16 +17,20 @@
         flex-wrap: $wrap;
     }
 
+    @if $gap {
+        gap: $gap;
+    }
+
     // fix
     & > * {
         min-width: 0;
     }
 }
 
-@mixin flex($direction: false, $align: false, $justify: false, $wrap: false) {
-    @include flex-variant(flex, $direction: $direction, $align: $align, $justify: $justify, $wrap: $wrap);
+@mixin flex($direction: false, $align: false, $justify: false, $wrap: false, $gap: false) {
+    @include flex-variant(flex, $direction: $direction, $align: $align, $justify: $justify, $wrap: $wrap, $gap: $gap);
 }
 
-@mixin inline-flex($direction: false, $align: false, $justify: false, $wrap: false) {
-    @include flex-variant(inline-flex, $direction: $direction, $align: $align, $justify: $justify, $wrap: $wrap);
+@mixin inline-flex($direction: false, $align: false, $justify: false, $wrap: false, $gap: false) {
+    @include flex-variant(inline-flex, $direction: $direction, $align: $align, $justify: $justify, $wrap: $wrap, $gap: $gap);
 }
