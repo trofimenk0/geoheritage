@@ -1,4 +1,13 @@
 <?php
+
+/**
+ * Include external files
+ */
+require_once( get_template_directory() . '/inc/carbon-fields.php' );
+
+
+
+
 add_action( 'after_setup_theme', 'geoheritage_theme_setup' );
 function geoheritage_theme_setup() {
 

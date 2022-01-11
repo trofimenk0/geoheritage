@@ -1,0 +1,41 @@
+.homeBanner {
+    padding: 200px 0 100px 0;
+    background-size: cover;
+    background-position: center top;
+
+    &__content {
+        color: #fff;
+        width: 100%;
+        max-width: 1200px;
+        text-align: center;
+        margin: 0 auto 50px auto;
+        text-shadow: 0 4px 20px rgb(0 0 0 / 10%);
+    }
+
+    &__title {
+        font-size: 60px;
+        font-weight: 500;
+        line-height: 80px;
+        margin: 0 0 50px 0;
+
+        .blue {
+            color: $blue-color;
+        }
+
+        .green {
+            color: $green-color;
+        }
+    }
+
+    &__text {
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+    &__image {
+        width: 300px;
+        margin: auto;
+        display: block;
+        filter: drop-shadow(0 10px 50px rgb(0 0 0 / 10%));
+    }
+}
