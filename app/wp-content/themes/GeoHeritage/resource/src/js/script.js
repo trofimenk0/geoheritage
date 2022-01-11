@@ -3,24 +3,27 @@ $(function () {
     /*
      Livesearch
     */
-    $('.header__searchSubmit').on('click', function() {
-
+    $( '.header__searchSubmit' ).on( 'focus', function() {
         if ( ! $( '.header__searchForm' ).hasClass( 'header__searchForm_active' ) ) {
             $( '.header__searchForm' ).addClass( 'header__searchForm_active' ).css( 'display', 'flex' ).hide().fadeIn( 300 );
             return;
         }
 
-        $( '.header__searchForm' ).removeClass( 'header__searchForm_active' ).fadeOut( 300 );
+        // $( '.header__searchForm' ).removeClass( 'header__searchForm_active' ).fadeOut( 300 );
+    } );
 
-    });
+    $( document ).on( 'click', function( event ) {
+        let target = event.target;
+        if ( ! $( target ).parents().is( '.header__search' ) ) {
+            $( '.header__searchForm' ).removeClass( 'header__searchForm_active' ).fadeOut( 300 );
+        }
+    } );
 
 });
 
-
-
-
-
-// PRELOADER
+/*
+ Preloader
+*/
 // window.addEventListener('load', (event) => {
 //   const preloader = document.getElementById("preloader");
 //   preloader.style.opacity = '0';
