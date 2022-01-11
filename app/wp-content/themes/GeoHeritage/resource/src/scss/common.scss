@@ -1,16 +1,10 @@
-/* Font */
-@font-face {
-  font-family: 'Nunito';
-  src: url('../fonts/Nunito-VariableFont_wght.ttf');
-}
-
 /* Variables */
 $blue-color: #2196f3;
 
 /* START COMMON STYLES */
 * {
   box-sizing: border-box;
-  font-family: 'Nunito';
+  font-family: 'Mulish';
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -99,9 +93,8 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
+  font-family: 'Mulish';
   vertical-align: baseline;
-  font-family: 'Nunito';
 }
 
 html {
@@ -113,7 +106,7 @@ body {
 }
 
 a {
-  font-family: 'Nunito';
+  font-family: 'Mulish';
   text-decoration: none;
   text-decoration-skip-ink: auto;
 }
@@ -126,7 +119,7 @@ a[href^="tel"] {
 button {
   cursor: pointer;
   outline: none;
-  font-family: 'Nunito';
+  font-family: 'Mulish';
 }
 
 ol,
