@@ -8,8 +8,6 @@ $(function () {
             $( '.header__searchForm' ).addClass( 'header__searchForm_active' ).css( 'display', 'flex' ).hide().fadeIn( 300 );
             return;
         }
-
-        // $( '.header__searchForm' ).removeClass( 'header__searchForm_active' ).fadeOut( 300 );
     } );
 
     $( document ).on( 'click', function( event ) {
@@ -70,16 +68,18 @@ $(function () {
 
 
 //  HEADER 
-// window.onscroll = function () {
-//   if (
-//     document.body.scrollTop > 100 ||
-//     document.documentElement.scrollTop > 100
-//   ) {
-//     document.getElementById("header").classList.add("scrolling");
-//   } else {
-//     document.getElementById("header").classList.remove("scrolling");
-//   }
-// };
+window.onscroll = function () {
+  if (
+    document.body.scrollTop > 100 ||
+    document.documentElement.scrollTop > 100
+  ) {
+    $( '.header' ).addClass( 'header_scrolling' );
+    $( '.custom-logo-link' ).addClass( 'custom-logo-link_small' );
+  } else {
+    $( '.header' ).removeClass( 'header_scrolling' );
+    $( '.custom-logo-link' ).removeClass( 'custom-logo-link_small' );
+  }
+};
 
 
 
