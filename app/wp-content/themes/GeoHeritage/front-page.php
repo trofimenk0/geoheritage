@@ -8,12 +8,17 @@ if ( have_posts() ) {
 		the_post();
 
         /**
-         * Home page fields
+         * Home page banner fields
          */
         $banner_title    = carbon_get_the_post_meta( 'front_page_banner_title' );
         $banner_text     = carbon_get_the_post_meta( 'front_page_banner_text' );
         $banner_bg_image = carbon_get_the_post_meta( 'front_page_banner_bg_image' );
         $banner_image    = carbon_get_the_post_meta( 'front_page_banner_image' );
+
+        /**
+         * Home page description fields
+         */
+        $description_text = carbon_get_the_post_meta( 'front_page_description_text' );
 
 	}
 
@@ -34,8 +39,14 @@ if ( have_posts() ) {
         <img src="<?php echo $banner_image; ?>" alt="" class="homeBanner__image">
     </section>
 
-    <!-- Regions -->
+    <!-- Description -->
+    <section class="homeDescription">
+        <div class="homeDescription__content">
+            <?php echo $description_text; ?>
+        </div>
+    </section>
 
+    <!-- Regions -->
     <section class="homeRegions">
         
             <?php $regions_of_ukraine = get_categories( [
@@ -81,12 +92,6 @@ if ( have_posts() ) {
             <?php } ?>
 
     </section>
-
-
-
-
-
-
 
 </main>
 
