@@ -6,7 +6,20 @@ use Carbon_Fields\Field;
 add_action( 'carbon_fields_register_fields', 'crb_create_fields' );
 function crb_create_fields() {
     Container::make( 'theme_options', __( 'Theme Options' ) )
-        ->add_fields( array() );
+        ->add_fields( array(
+            Field::make( 'separator', 'footer_separator', __( 'Footer' ) ),
+            Field::make( 'text', 'partners_title', __( 'Partners Section Title' ) ),
+            Field::make( 'complex', 'partners', __( 'Partners List' ) )
+                ->add_fields( array(
+                    Field::make( 'image', 'partner_logo', __( 'Partner Logo' ) )
+                        ->set_width( 20 ),
+                    Field::make( 'text', 'partner_name', __( 'Partner Name' ) )
+                        ->set_width( 40 ),
+                    Field::make( 'text', 'partner_link', __( 'Partner Link' ) )
+                        ->set_width( 40 ),
+                ) ),
+            Field::make( 'text', 'copyright_text', __( 'Copyright Text' ) ),
+        ) );
 
 
     /**

@@ -1,0 +1,65 @@
+.footer {
+    background-color: #fafafa;
+
+    &__content {
+        width: 100%;
+        margin: 0 auto;
+        padding: 60px 0;
+        max-width: 1600px;
+        @include flex(row, flex-start, flex-start, wrap);
+    }
+
+    &__partners {
+        @include flex(column, flex-start, flex-start, nowrap, 20px);
+    }
+
+    &__partnersTitle {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 30px;
+    }
+
+    &__partnersLink {
+        color: #000;
+        height: 50px;
+        font-size: 16px;
+        line-height: 24px;
+        @include flex(row, center, flex-start, wrap, 10px);
+
+        &:hover {
+
+            .footer__partnersLogo {
+                margin: 0 6px 0 0;
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    &__partnersLogo {
+        width: auto;
+        height: 100%;
+        object-fit: contain;
+        transition: all 0.3s;
+
+        &:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(4px 4px 10px rgba(33, 150, 243, .3)) drop-shadow(-4px -4px 10px rgba(82, 216, 88, .3));
+        }
+    }
+
+    &__partnersName {
+        transition: all 0.3s;
+        
+        &:hover {
+            text-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+        }
+    }
+
+    &__copyright {
+        color: #fff;
+        padding: 20px 0;
+        background-color: $green-color;
+        @include flex(row, center, center, wrap);
+    }
+}
