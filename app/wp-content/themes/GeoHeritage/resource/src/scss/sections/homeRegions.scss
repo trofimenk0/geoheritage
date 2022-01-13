@@ -51,21 +51,25 @@
         position: relative;
         text-align: center;
         border-radius: 20px;
-        transition: all 0.3s;
+        transition: box-shadow 0.3s, background-position 0.3s, margin-top 0.6s;
         text-decoration: none;
         background-position: 0 0;
-        padding: 100px 20px 20px 20px;
-        background: linear-gradient(135deg, #fff 50%, $green-color);
+        padding: 80px 20px 20px 20px;
+        background: linear-gradient(135deg, #fff 50%, rgba(82,216,88,.4));
         box-shadow: 0px 10px 40px -10px rgb(0 0 0 / 10%);
         background-size: 300%;
 
         &:hover {
+            margin: -10px 0 0 0;
             background-position: 50% 50%;
-            box-shadow: 10px 10px 30px -10px rgb(82 216 89 / 50%);
-            -webkit-box-shadow: 10px 10px 30px -10px rgb(82 216 89 / 50%);
+            box-shadow: 0px 10px 30px -10px rgba(82, 216, 88, .4);
 
             .homeRegions__regionImage {
                 top: -40px;
+            }
+
+            .homeRegions__regionIconLink {
+                transform: rotate(-10deg) translate(0, -6px);
             }
         }
     }
@@ -81,6 +85,12 @@
         position: absolute;
         transition: all 0.3s;
         filter: drop-shadow(0 10px 20px rgb(0 0 0 / 10%));
+    }
+
+    &__regionIconLink {
+        width: auto;
+        height: 14px;
+        transition: all 0.3s;
     }
 
     &__regionName {
