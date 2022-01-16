@@ -31,6 +31,9 @@ while ( have_posts() ) :
         $index = 0;
         ?>
             <section class="geoMonument__gallery">
+                <h2 class="geoMonument__galleryTitle">
+                    Галерея:
+                </h2>
                 <div class="geoMonument__galleryContent">
                     <?php foreach( $gallery as $image_id ): ?>
                         <a href="javascript: void(0);" class="geoMonument__galleryItem" data-index="<?php echo ++$index; ?>">

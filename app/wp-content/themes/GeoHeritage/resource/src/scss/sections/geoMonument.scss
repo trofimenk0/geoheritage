@@ -77,7 +77,17 @@
 
     &__gallery {
         padding: 100px 0;
-        @include flex(row, center, center, nowrap);
+        @include flex(column, center, center, nowrap);
+    }
+
+    &__galleryTitle {
+        width: 100%;
+        font-size: 28px;
+        font-weight: 600;
+        text-align: left;
+        line-height: 36px;
+        max-width: 1600px;
+        margin: 0 0 60px 0;
     }
 
     &__galleryContent {
@@ -120,8 +130,8 @@
 
         &:hover {
             filter: saturate(2) brightness(1.1);
-            box-shadow: rgb(82 216 89 / 50%) 0px 40px 30px -30px;
-            -webkit-box-shadow: rgb(82 216 89 / 50%) 0px 50px 30px -30px;
+            box-shadow: rgb(82 216 88 / 30%) 0px 40px 30px -30px;
+            -webkit-box-shadow: rgb(82 216 88 / 30%) 0px 50px 30px -30px;
         }
     }
 
