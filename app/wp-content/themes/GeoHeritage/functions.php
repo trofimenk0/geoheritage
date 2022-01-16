@@ -320,7 +320,7 @@ function geo_search_geological_monuments() {
       array( 
         'posts_per_page' => 20, 
         's'              => esc_attr( $_POST['searchQuery'] ), 
-        'post_type'      => 'post',
+        'post_type'      => 'geological_monuments',
       ) 
     );
   
