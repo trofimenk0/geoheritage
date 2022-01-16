@@ -17,7 +17,26 @@ $(function () {
         }
     } );
 
+
+    /*
+     Header
+    */  
+    window.onscroll = function () {
+      if (
+        document.body.scrollTop > 100 ||
+        document.documentElement.scrollTop > 100
+      ) {
+        $( '.header' ).addClass( 'header_scrolling' );
+        $( '.custom-logo-link' ).addClass( 'custom-logo-link_small' );
+      } else {
+        $( '.header' ).removeClass( 'header_scrolling' );
+        $( '.custom-logo-link' ).removeClass( 'custom-logo-link_small' );
+      }
+    };
+
 });
+
+
 
 /*
  Preloader
@@ -67,19 +86,7 @@ $(function () {
 
 
 
-//  HEADER 
-window.onscroll = function () {
-  if (
-    document.body.scrollTop > 100 ||
-    document.documentElement.scrollTop > 100
-  ) {
-    $( '.header' ).addClass( 'header_scrolling' );
-    $( '.custom-logo-link' ).addClass( 'custom-logo-link_small' );
-  } else {
-    $( '.header' ).removeClass( 'header_scrolling' );
-    $( '.custom-logo-link' ).removeClass( 'custom-logo-link_small' );
-  }
-};
+
 
 
 
