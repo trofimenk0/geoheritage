@@ -21,9 +21,7 @@ if ( have_posts() ) {
         $description_text = carbon_get_the_post_meta( 'front_page_description_text' );
 
 	}
-
     
-
 }
 ?>
 
