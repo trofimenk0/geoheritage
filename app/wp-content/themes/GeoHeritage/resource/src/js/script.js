@@ -20,7 +20,7 @@ $(function () {
 
     /*
      Header
-    */  
+    */
     window.onscroll = function () {
       if (
         document.body.scrollTop > 100 ||
@@ -33,6 +33,36 @@ $(function () {
         $( '.custom-logo-link' ).removeClass( 'custom-logo-link_small' );
       }
     };
+
+    /*
+     Gallery slider
+    */
+    var geoMonumentSwiperSlider = new Swiper(".geoMonument__slider", {
+      slidesPerView: 1,
+      loop: true,
+      navigation: {
+        nextEl: ".geoMonument__sliderNavNext",
+        prevEl: ".geoMonument__sliderNavPrev",
+      },
+    });
+
+    /*
+     Gallery slider navigation action
+    */
+    $( '.geoMonument__galleryItem' ).on( 'click', function( event ) {
+      event.preventDefault();
+      $( '.geoMonument__slider' ).fadeIn( 200 );
+
+      let index = $(this).data('index');
+      if ( index ) {
+        geoMonumentSwiperSlider.slideTo(index);
+      }
+    } );
+
+    $( '.geoMonument__sliderClose' ).on( 'click', function( event ) {
+      event.preventDefault();
+      $( '.geoMonument__slider' ).fadeOut( 200 );
+    } );
 
 });
 
@@ -131,17 +161,6 @@ $(function () {
 //   this.classList.toggle("active");
 //   document.getElementById("header").classList.toggle("menuActive");
 // });
-
-
-
-
-
-// LIGHTGALLERY
-// const lightGalleryWrapper = document.getElementById("lightgallery");
-// lightGallery(lightGalleryWrapper);
-
-
-
 
 
 //  START UKRAINE MAP 
