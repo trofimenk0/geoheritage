@@ -33,6 +33,33 @@ $partners_title = carbon_get_theme_option( 'partners_title' );
           <?php } ?>
 
         </div>
+
+        <nav class="footer__menu">
+          <h3 class="footer__menuTitle">
+            Популярні області
+          </h3>
+
+          <?php $menuArgs = array(
+            'theme_location'  => 'Footer menu',
+            'menu'            => 'Footer menu', 
+            'container'       => false, 
+            'container_class' => '', 
+            'container_id'    => '',
+            'menu_class'      => '', 
+            'menu_id'         => '',
+            'echo'            => false,
+            'fallback_cb'     => 'wp_page_menu',
+            'before'          => '',
+            'after'           => '',
+            'link_before'     => '',
+            'link_after'      => '',
+            'items_wrap'      => '%3$s',
+            'depth'           => 0,
+            'walker'          => '',
+          );
+
+          echo strip_tags(wp_nav_menu( $menuArgs ), '<a>' ); ?>
+        </nav>
       </div>
 
       <div class="footer__copyright">

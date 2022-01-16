@@ -6,10 +6,14 @@
         margin: 0 auto;
         padding: 60px 0;
         max-width: 1600px;
-        @include flex(row, flex-start, flex-start, wrap);
+        @include flex(row, flex-start, flex-start, wrap, 100px);
     }
 
+    /*
+     Footer partners section
+    */
     &__partners {
+        width: 300px;
         @include flex(column, flex-start, flex-start, nowrap, 20px);
     }
 
@@ -56,6 +60,53 @@
         }
     }
 
+    /*
+     Footer menu section
+    */
+    &__menu {
+        width: 300px;
+        color: #000;
+        font-size: 16px;
+        line-height: 24px;
+        @include flex(column, flex-start, flex-start, nowrap, 20px);
+
+        a {
+            color: #000;
+            font-size: 16px;
+            line-height: 24px;
+            position: relative;
+            transition: all 0.3s;
+            text-decoration: none;
+
+            &:hover {
+                &::after {
+                    width: 100%;
+                }
+            }
+
+            &::after {
+                left: 0;
+                width: 0;
+                content: '';
+                height: 2px;
+                bottom: -2px;
+                position: absolute;
+                transition: all 0.3s;
+                background-color: $green-color;
+            }
+        }
+    }
+
+    &__menuTitle {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 30px;
+    }
+
+    /*
+     Footer copyright section
+    */
     &__copyright {
         color: #fff;
         padding: 20px 0;

@@ -5,9 +5,6 @@
  */
 require_once( get_template_directory() . '/inc/carbon-fields.php' );
 
-
-
-
 add_action( 'after_setup_theme', 'geoheritage_theme_setup' );
 function geoheritage_theme_setup() {
 
@@ -196,6 +193,42 @@ function geoHeritageBreadcrumbs(){
 }
 
 /*
+* Creating a function to create custom taxonomy
+*/
+function geo_custom_taxonomy_regions_of_ukraine(){
+
+	// список параметров: wp-kama.ru/function/get_taxonomy_labels
+	register_taxonomy( 'regions_of_ukraine', [ 'geological_monuments' ], [
+		'label'                 => 'Regions of Ukraine', // определяется параметром $labels->name
+		'labels'                => [
+			'name'              => 'Regions of Ukraine',
+			'singular_name'     => 'Region of Ukraine',
+			'search_items'      => 'Search regions of Ukraine',
+			'all_items'         => 'All regions of Ukraine',
+			'view_item '        => 'View region of Ukraine',
+			'parent_item'       => 'Parent region of Ukraine',
+			'parent_item_colon' => 'Parent region of Ukraine:',
+			'edit_item'         => 'Edit region of Ukraine',
+			'update_item'       => 'Update region of Ukraine',
+			'add_new_item'      => 'Add New region of Ukraine',
+			'new_item_name'     => 'New region of Ukraine',
+			'menu_name'         => 'Regions of Ukraine',
+			'back_to_items'     => '← Back to region of Ukraine',
+		],
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'show_in_nav_menus'     => true,
+		'show_in_rest'          => true,
+		'hierarchical'          => true,
+		'rewrite'               => true,
+		'capabilities'          => array(),
+		'description'           => 'Regions of Ukraine description',
+	] );
+}
+add_action( 'init', 'geo_custom_taxonomy_regions_of_ukraine' );
+
+/*
 * Creating a function to create custom post type geological monuments
 */
 function geo_custom_post_type_geological_monuments() {
@@ -245,42 +278,6 @@ function geo_custom_post_type_geological_monuments() {
 	
 }
 add_action( 'init', 'geo_custom_post_type_geological_monuments', 0 );
-
-/*
-* Creating a function to create custom taxonomy
-*/
-function geo_custom_taxonomy_regions_of_ukraine(){
-
-	// список параметров: wp-kama.ru/function/get_taxonomy_labels
-	register_taxonomy( 'regions_of_ukraine', [ 'geological_monuments' ], [
-		'label'                 => 'Regions of Ukraine', // определяется параметром $labels->name
-		'labels'                => [
-			'name'              => 'Regions of Ukraine',
-			'singular_name'     => 'Region of Ukraine',
-			'search_items'      => 'Search regions of Ukraine',
-			'all_items'         => 'All regions of Ukraine',
-			'view_item '        => 'View region of Ukraine',
-			'parent_item'       => 'Parent region of Ukraine',
-			'parent_item_colon' => 'Parent region of Ukraine:',
-			'edit_item'         => 'Edit region of Ukraine',
-			'update_item'       => 'Update region of Ukraine',
-			'add_new_item'      => 'Add New region of Ukraine',
-			'new_item_name'     => 'New region of Ukraine',
-			'menu_name'         => 'Regions of Ukraine',
-			'back_to_items'     => '← Back to region of Ukraine',
-		],
-		'description'           => 'Regions of Ukraine description',
-		'public'                => true,
-		'hierarchical'          => false,
-		'rewrite'               => true,
-		'capabilities'          => array(),
-		'meta_box_cb'           => null,
-		'show_admin_column'     => false,
-		'show_in_rest'          => true,
-		'rest_base'             => null,
-	] );
-}
-add_action( 'init', 'geo_custom_taxonomy_regions_of_ukraine' );
 
 /*
 * Livesearch ajax function
