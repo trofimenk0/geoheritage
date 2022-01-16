@@ -48,9 +48,6 @@ function crb_create_fields() {
             )
         );
 
-
-        
-
     /**
      * Regions fields
      */
@@ -59,6 +56,17 @@ function crb_create_fields() {
         ->add_fields(
             array(
                 Field::make( 'image', 'region_of_ukraine_emblem', __( 'Coat of arms of the region' ) ),
+            )
+        );
+
+    /**
+     * Geological monuments fields
+     */
+    Container::make( 'post_meta', __( 'Geological Monument Data' ) )
+        ->where( 'post_type', '=', 'geological_monuments' )
+        ->add_fields(
+            array(
+                Field::make( 'media_gallery', 'geological_monument_gallery', __( 'Geological Monument Gallery' ) )
             )
         );
 
