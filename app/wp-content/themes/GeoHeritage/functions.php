@@ -12,7 +12,7 @@ add_action( 'after_setup_theme', 'geoheritage_theme_setup' );
 function geoheritage_theme_setup() {
 
 	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'category-thumb', 100, 100, false );
+	add_image_size( 'regions-emblems-small', 100, 100, false );
 
 	load_theme_textdomain( 'geoheritage', get_template_directory() . '/languages' );
 
@@ -121,6 +121,3 @@ add_filter( 'excerpt_length', function() {
 add_filter( 'excerpt_more', function( $more ) {
 	return '...';
 } );
-
-
-add_image_size( 'regions-emblems-small', 100, 100 );
