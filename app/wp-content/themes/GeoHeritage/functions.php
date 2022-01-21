@@ -121,3 +121,6 @@ add_filter( 'excerpt_length', function() {
 add_filter( 'excerpt_more', function( $more ) {
 	return '...';
 } );
+
+
+add_image_size( 'regions-emblems-small', 100, 100 );

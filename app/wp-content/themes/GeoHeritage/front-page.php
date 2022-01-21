@@ -74,7 +74,7 @@ if ( have_posts() ) {
                         $region_url  = get_category_link( $region_id );
 
                         $region_emblem_id  = carbon_get_term_meta( $region_id, 'region_of_ukraine_emblem' );
-                        $region_emblem_url = wp_get_attachment_image_url( $region_emblem_id, 'thumbnail', true );
+                        $region_emblem_url = wp_get_attachment_image_url( $region_emblem_id, 'regions-emblems-small', true );
                         ?>
 
                         <a href="<?php echo $region_url; ?>" class="homeRegions__region">
