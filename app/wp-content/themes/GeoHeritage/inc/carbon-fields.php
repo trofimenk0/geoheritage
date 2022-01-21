@@ -70,6 +70,21 @@ function crb_create_fields() {
             )
         );
 
+
+    /**
+     * About page template fields
+     */
+    Container::make( 'post_meta', __( 'About page fields', 'crb' ) )
+        ->where( 'post_type', '=', 'page' )
+        ->where( 'post_template', '=', 'about.php' )
+        ->add_tab(
+            __( 'Banner' ),
+            array(
+                Field::make( 'image', 'about_page_banner_bg_image', __( 'Banner Background Image' ) )
+                    ->set_value_type( 'url' ),
+            )
+        );
+
 }
 
 ?>
