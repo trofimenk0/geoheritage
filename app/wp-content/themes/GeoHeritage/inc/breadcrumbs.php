@@ -61,7 +61,8 @@ function geoHeritageBreadcrumbs( $id = null ) {
      * If page
      */
     if ( is_page() ) {
-        the_title();
+        $output .= get_the_title();
+        return $output;
     }
     
     /**
