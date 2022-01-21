@@ -5,6 +5,9 @@
 </button>
 
 <form role="search" method="get" id="searchform" class="header__searchForm" action="http://localhost:8888/geoheritage/app/">
+    <h3 class="header__searchFormTitle">
+        <?php _e('Пошук', 'geoheritage'); ?>
+    </h3>
     <input class="header__searchInput" type="text" value="" name="s" id="searchInput" placeholder="Знайти геопамʼятку">
 
     <div class="header__searchResults" id="searchResults"></div>

@@ -114,6 +114,13 @@
         display: none;
     }
 
+    &__searchFormTitle {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 30px;
+    }
+
     &__searchInput {
         width: 100%;
         height: 40px;
@@ -155,15 +162,30 @@
     }
 
     &__searchResultLink {
-        padding: 10px;
+        padding: 10px 0;
+        position: relative;
         color: $blue-color;
         border-radius: 10px;
         transition: all 0.3s;
         @include flex(column, flex-start, flex-start, nowrap);
 
         &:hover {
-            color: #fff;
-            background-color: #2196f3;
+            padding: 10px 0 10px 10px;
+            
+            &:after {
+                width: 50px;
+            }
+        }
+
+        &:after {
+            content: "";
+            left: 0;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            position: absolute;
+            transition: all .3s;
+            background-color: #52d858;
         }
     }
 }
