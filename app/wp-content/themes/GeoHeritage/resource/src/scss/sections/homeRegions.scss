@@ -15,9 +15,9 @@
         filter: blur(100px);
         background: rgb( 33 150 243 / 40%);
         border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
-        will-change: border-radius, transform, opacity;
-        animation: sliderShape 5s linear infinite;
-        -webkit-animation: sliderShape 10s linear infinite;
+        // will-change: border-radius, transform, opacity;
+        // animation: sliderShape 5s linear infinite;
+        // -webkit-animation: sliderShape 10s linear infinite;
     }
 
     &::after {
@@ -32,9 +32,9 @@
         filter: blur(100px);
         background: rgb( 82 216 88 / 40% );
         border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
-        will-change: border-radius, transform, opacity;
-        animation: sliderShape 5s linear infinite;
-        -webkit-animation: sliderShape 10s linear infinite;
+        // will-change: border-radius, transform, opacity;
+        // animation: sliderShape 5s linear infinite;
+        // -webkit-animation: sliderShape 10s linear infinite;
     }
 
     &__list {
@@ -100,23 +100,23 @@
 
 }
 
-@keyframes sliderShape{
-    0%, 100% {
-        border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
-        transform: translate3d(0,0,0) rotateZ(0.01deg);
-    }
+// @keyframes sliderShape{
+//     0%, 100% {
+//         border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+//         transform: translate3d(0,0,0) rotateZ(0.01deg);
+//     }
 
-    34% {
-        border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
-        transform:  translate3d(0,5px,0) rotateZ(0.01deg);
-    }
+//     34% {
+//         border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+//         transform:  translate3d(0,5px,0) rotateZ(0.01deg);
+//     }
 
-    50% {
-        transform: translate3d(0,0,0) rotateZ(0.01deg);
-    }
+//     50% {
+//         transform: translate3d(0,0,0) rotateZ(0.01deg);
+//     }
 
-    67% {
-        border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;
-        transform: translate3d(0,-3px,0) rotateZ(0.01deg);
-    }
-}
+//     67% {
+//         border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;
+//         transform: translate3d(0,-3px,0) rotateZ(0.01deg);
+//     }
+// }
