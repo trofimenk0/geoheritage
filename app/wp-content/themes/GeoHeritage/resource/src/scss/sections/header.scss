@@ -15,9 +15,9 @@
 
     &__container {
         width: 100%;
-        max-width: 1600px;
         margin: auto;
-        @include flex(row, center, space-between, wrap);
+        max-width: 1600px;
+        @include flex(row, center, flex-start, wrap);
     }
 
     .custom-logo-link {
@@ -38,8 +38,8 @@
     }
 
     &__primaryMenu {
-        gap: 60px;
-        @include flex(row, center, center, wrap);
+        margin: 0 100px 0 auto;
+        @include flex(row, center, center, wrap, 60px);
 
         a {
             color: #000;
