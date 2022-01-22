@@ -48,11 +48,18 @@ function geo_search_geological_monuments() {
         while ( $the_query->have_posts() ): $the_query->the_post(); ?>
 
 			<a href="<?php echo esc_url( post_permalink() ); ?>" class="header__searchResultLink">
-				<?php the_title();?>
+				<?php the_title(); ?>
 			</a>
 
         <?php endwhile;
         wp_reset_postdata();  
+	else : ?>
+	
+		<div class="header__searchResultEmpty">
+			<?php _e( 'Нічого не знайдено. Змініть будь ласка текст запиту.', 'geoheritage' ); ?>
+		</div>
+		
+		<?php wp_reset_postdata();  
     endif;
 
     die();

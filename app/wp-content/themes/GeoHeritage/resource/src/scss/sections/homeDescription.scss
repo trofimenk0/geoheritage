@@ -1,5 +1,5 @@
 .homeDescription {
-    padding: 200px 0;
+    padding: 200px 40px;
     position: relative;
 
     &__content {
@@ -22,10 +22,40 @@
 
     &__title {
         font-weight: 600;
-        font-size: 28px;
         position: static;
         line-height: 36px;
         margin: 0 0 20px 0;
         text-align: center;
+        font-size: calc(20px + (28 - 20) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    /*
+        Media Queries
+    */
+    @media screen and (max-width: 1200px) {
+        &__content {
+            width: auto;
+            margin: 0 40px;
+            max-width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        padding: 60px 40px;
+
+        &__content {
+            margin: 0;
+            position: static;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 60px 20px;
+    }
+
+    @media screen and (max-width: 600px) {
+        &__content {
+            padding: 20px;
+        }
     }
 }

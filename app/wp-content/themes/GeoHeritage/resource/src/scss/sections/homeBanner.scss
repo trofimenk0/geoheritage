@@ -1,6 +1,7 @@
 .homeBanner {
-    padding: 300px 0 400px 0;
+    padding: 300px 40px 400px 40px;
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: center top;
 
     &__content {
@@ -28,8 +29,8 @@
     }
 
     &__text {
-        font-size: 24px;
         line-height: 34px;
+        font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
     }
 
     &__image {
@@ -37,5 +38,47 @@
         margin: auto;
         display: block;
         filter: drop-shadow(0 10px 50px rgb(0 0 0 / 10%));
+    }
+
+    /*
+        Media Queries
+    */
+    @media screen and (max-width: 1440px) {
+        background-position: center center;
+
+        &__title {
+            line-height: 60px;
+            font-size: calc(24px + (56 - 24) * ((100vw - 320px) / (1440 - 320)));
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        padding: 200px 40px 60px 40px;
+        background-size: 180%;
+
+        &__title {
+            line-height: 40px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 200px 20px 60px 20px;
+        background-size: 300%;
+
+        &__content {
+            margin: 0 0 40px 0;
+        }
+
+        &__title {
+            margin: 0 0 40px 0;
+        }
+
+        &__text {
+            line-height: 30px;
+        }
+
+        &__image {
+            width: 200px;
+        }
     }
 }

@@ -11,8 +11,34 @@ $(function () {
 
     $( document ).on( 'click', function( event ) {
         let target = event.target;
-        if ( ! $( target ).parents().is( '.header__search' ) ) {
+        if (
+          ! $( target ).parents().is( '.header__search' ) &&
+          $( '.header__searchForm' ).hasClass( 'header__searchForm_active' )
+        ) {
             $( '.header__searchForm' ).removeClass( 'header__searchForm_active' ).fadeOut( 300 );
+        }
+    } );
+
+    /**
+     * Mobile menu
+     */
+    $( '.header__buttonMenu' ).on( 'focus', function() {
+      if ( ! $( '.header__primaryMenu' ).hasClass( 'header__primaryMenu_active' ) ) {
+          $( '.header__primaryMenu' ).addClass( 'header__primaryMenu_active' ).css( 'display', 'flex' ).hide().fadeIn( 300 );
+          return;
+      }
+    } );
+
+    $( document ).on( 'click', function( event ) {
+        let target = event.target;
+        if (
+          ! $( target ).is( '.header__primaryMenu' ) &&
+          ! $( target ).parents().is( '.header__primaryMenu' ) &&
+          ! $( target ).is( '.header__buttonMenu' ) &&
+          ! $( target ).parents().is( '.header__buttonMenu' ) &&
+          $( '.header__primaryMenu' ).hasClass( 'header__primaryMenu_active' )
+        ) {
+          $( '.header__primaryMenu' ).removeClass( 'header__primaryMenu_active' ).fadeOut( 300 );
         }
     } );
 

@@ -1,5 +1,5 @@
 .homeRegions {
-    padding: 100px 0;
+    padding: 100px 40px;
     overflow: hidden;
     position: relative;
 
@@ -41,7 +41,7 @@
         width: 100%;
         margin: 0 auto;
         max-width: 1600px;
-        @include flex(row, flex-start, space-between, wrap, 80px 0);
+        @include flex(row, stretch, space-between, wrap, 80px 0);
     }
 
     &__region {
@@ -51,16 +51,16 @@
         position: relative;
         text-align: center;
         border-radius: 20px;
-        transition: box-shadow 0.3s, background-position 0.3s, margin-top 0.6s;
         text-decoration: none;
         background-position: 0 0;
         padding: 80px 20px 20px 20px;
-        background: linear-gradient(135deg, #fff 50%, rgba(82, 216, 88, .4));
         box-shadow: 0px 10px 40px -10px rgb(0 0 0 / 10%);
+        transition: box-shadow 0.3s, background-position 0.3s, transform 0.6s;
+        background: linear-gradient(135deg, #fff 50%, rgba(82, 216, 88, .4));
         background-size: 300%;
 
         &:hover {
-            margin: -10px 0 0 0;
+            transform: translate(0, -10px);
             background-position: 50% 50%;
             box-shadow: 0px 10px 30px -10px rgba(82, 216, 88, .4);
 
@@ -98,6 +98,80 @@
         text-shadow: 0 4px 10px rgb(0 0 0 / 20%);
     }
 
+
+    /*
+        Media Queries
+    */
+    @media screen and (max-width: 1600px) {
+        &__region {
+            flex-basis: 21%;
+            padding: 90px 20px 20px 20px;
+        }
+
+        &__regionName {
+            margin: 6px 0 0 0;
+        }
+    }
+
+    @media screen and (max-width: 1440px) {
+        &__region {
+            min-width: 255px;
+            flex-basis: 23%;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        &__region {
+            flex-basis: 30%;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        padding: 60px 40px;
+    }
+
+    @media screen and (max-width: 992px) {
+        &::before {
+            top: 4%;
+            width: 80%;
+            height: 50%;
+        }
+
+        &::after {
+            width: 80%;
+            bottom: 4%;
+            height: 50%;
+        }
+
+        &__region {
+            min-width: unset;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 60px 20px;
+
+        &__region {
+            flex-basis: 46%;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        &__region {
+            flex-basis: 48%;
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        &__list {
+            @include flex(row, stretch, center, wrap, 60px 0);
+        }
+
+        &__region {
+            flex-basis: 100%;
+            max-width: 300px;
+        }
+    }
 }
 
 // @keyframes sliderShape{

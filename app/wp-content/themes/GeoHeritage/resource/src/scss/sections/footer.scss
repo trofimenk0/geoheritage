@@ -4,8 +4,8 @@
     &__content {
         width: 100%;
         margin: 0 auto;
-        padding: 60px 0;
-        max-width: 1600px;
+        padding: 60px 40px 100px 40px;
+        max-width: 1680px;
         @include flex(row, flex-start, flex-start, wrap, 100px);
     }
 
@@ -13,16 +13,16 @@
      Footer partners section
     */
     &__partners {
-        width: 300px;
+        flex-basis: 300px;
         @include flex(column, flex-start, flex-start, nowrap, 20px);
     }
 
     &__partnersTitle {
         margin: 0;
-        font-size: 22px;
         font-weight: 500;
         line-height: 30px;
         margin: 0 0 20px 0;
+        font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
     }
 
     &__partnersLink {
@@ -65,7 +65,7 @@
      Footer menu section
     */
     &__menu {
-        width: 300px;
+        flex-basis: 300px;
         color: #000;
         font-size: 16px;
         line-height: 24px;
@@ -99,10 +99,10 @@
     }
 
     &__menuTitle {
-        font-size: 22px;
         font-weight: 500;
         line-height: 30px;
         margin: 0 0 20px 0;
+        font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
     }
 
     /*
@@ -113,5 +113,58 @@
         padding: 20px 0;
         background-color: $green-color;
         @include flex(row, center, center, wrap);
+    }
+
+    /*
+        Media Queries
+    */
+    @media screen and (max-width: 1024px) {
+        &__content {
+            gap: 60px;
+            padding: 60px 40px;
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        &__content{
+            gap: 0;
+            @include flex(row, flex-start, space-between, wrap);
+        }
+        
+        &__partners {
+            flex-basis: 48%;
+        }
+        
+        &__menu {
+            flex-basis: 48%;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        &__content {
+            padding: 60px 20px;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        &__content {
+            @include flex(column, flex-start, flex-start, nowrap, 40px);
+        }
+
+        &__partners {
+            flex-basis: 100%;
+        }
+
+        &__partnersTitle {
+            margin: 0;
+        }
+        
+        &__menu {
+            flex-basis: 100%;
+        }
+
+        &__menuTitle {
+            margin: 0;
+        }
     }
 }
