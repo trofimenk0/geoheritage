@@ -33,10 +33,17 @@
         @include flex(row, center, flex-start, wrap, 10px);
 
         &:hover {
-
             .footer__partnersLogo {
                 margin: 0 6px 0 0;
                 transform: scale(1.1);
+            }
+        }
+
+        &:active {
+            .footer__partnersLogo {
+                margin: 0;
+                transform: scale(1);
+                transition: all 0.2s;
             }
         }
     }
@@ -76,12 +83,24 @@
             font-size: 16px;
             line-height: 24px;
             position: relative;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             text-decoration: none;
 
             &:hover {
+                transform: translate(0, -6px);
+
                 &::after {
                     width: 100%;
+                }
+            }
+
+            &:active {
+                transition: all 0.2s ease;
+                transform: translate(0, 0px);
+
+                &::after {
+                    bottom: -2px;
+                    transition: all 0.2s ease;
                 }
             }
 
@@ -90,7 +109,7 @@
                 width: 0;
                 content: '';
                 height: 2px;
-                bottom: -2px;
+                bottom: -10px;
                 position: absolute;
                 transition: all 0.3s;
                 background-color: $green-color;

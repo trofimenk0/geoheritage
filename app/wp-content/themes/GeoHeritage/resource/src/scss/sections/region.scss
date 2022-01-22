@@ -125,6 +125,11 @@
                 margin: 40px 0 0 0;
             }
         }
+
+        &:active {
+            transition: all 0.2s;
+            transform: translate(0, -10px);
+        }
     }
 
     &__monumentsItemImage {

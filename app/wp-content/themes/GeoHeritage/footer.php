@@ -23,7 +23,7 @@ $partners_title = carbon_get_theme_option( 'partners_title' );
             $image_alt = get_post_meta( $logo_id, '_wp_attachment_image_alt', true );
             ?>
             
-            <a href="<?php echo $partner['partner_link']; ?>" class="footer__partnersLink" rel="nofollow">
+            <a href="<?php echo $partner['partner_link']; ?>" class="footer__partnersLink" rel="nofollow" target="_blank">
               <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" class="footer__partnersLogo">
               <span class="footer__partnersName">
                 <?php echo $partner['partner_name']; ?>

@@ -109,6 +109,11 @@
                 }
             }
         }
+
+        &:active {
+            transition: all 0.2s;
+            transform: translate(0, 0);
+        }
     }
 
     &__itemLinkIcon {

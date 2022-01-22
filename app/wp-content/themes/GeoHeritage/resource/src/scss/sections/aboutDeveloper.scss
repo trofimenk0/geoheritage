@@ -78,6 +78,16 @@
         padding: 0;
         width: 50px;
         height: 50px;
+        transition: all 0.3s;
+
+        &:hover {
+            transform: translate(0, -4px);
+        }
+
+        &:active {
+            transition: all 0.2s;
+            transform: translate(0, 0);
+        }
     }
 
     &__socialsItemLogo {
@@ -88,7 +98,6 @@
         object-position: center;
 
         &:hover {
-            transform: translate(0, -4px);
             box-shadow: 0 10px 20px 0 rgb(23 23 23 / 4%);
         }
     }
