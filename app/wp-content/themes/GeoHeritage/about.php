@@ -57,7 +57,9 @@ while ( have_posts() ) :
                     <?php foreach ( $about_page_partners as $partner ) : ?>
                         
                         <div class="aboutPartners__item">
-                            <img src="<?php echo wp_get_attachment_image_url( $partner['logo'], 'medium', true ) ?>" alt="" class="aboutPartners__itemLogo">
+                            <div class="aboutPartners__itemLogoWrapper">
+                                <img src="<?php echo wp_get_attachment_image_url( $partner['logo'], 'medium', true ) ?>" alt="" class="aboutPartners__itemLogo">
+                            </div>
 
                             <div class="aboutPartners__itemInfo">
                                 <h3 class="aboutPartners__itemName">
@@ -119,7 +121,9 @@ while ( have_posts() ) :
                     <?php endif; ?>
                 </div>
 
-                <img src="<?php echo wp_get_attachment_image_url( $about_page_developer_photo, 'large', true ); ?>" alt="" class="aboutDeveloper__photo">
+                <div class="aboutDeveloper__photoWrapper">
+                    <img src="<?php echo wp_get_attachment_image_url( $about_page_developer_photo, 'large', true ); ?>" alt="" class="aboutDeveloper__photo">
+                </div>
 
             </div>
         </section>

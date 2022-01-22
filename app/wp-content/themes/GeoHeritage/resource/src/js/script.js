@@ -1,5 +1,4 @@
 $(function () {
-
     /*
      Livesearch
     */
@@ -16,7 +15,6 @@ $(function () {
             $( '.header__searchForm' ).removeClass( 'header__searchForm_active' ).fadeOut( 300 );
         }
     } );
-
 
     /*
      Header
@@ -62,6 +60,26 @@ $(function () {
     $( '.geoMonument__sliderClose' ).on( 'click', function( event ) {
       event.preventDefault();
       $( '.geoMonument__slider' ).fadeOut( 200 );
+    } );
+
+    /**
+     * About partners emblems effect
+     */
+     $( document ).on( 'mousemove', function( event ) {
+      let xAxis = ( window.innerWidth / 2 - event.clientX ) / 50;
+      let yAxis = ( window.innerHeight / 2 - event.clientY ) / 50;
+
+      $( '.aboutPartners__itemLogo' ).css( 'transform', `rotateY(${xAxis}deg) rotateX(${yAxis}deg)` );
+    } );
+
+    /**
+     * About developer photo effect
+     */
+    $( document ).on( 'mousemove', function( event ) {
+      let xAxis = ( window.innerWidth / 2 - event.clientX ) / 100;
+      let yAxis = ( window.innerHeight / 2 - event.clientY ) / 100;
+
+      $( '.aboutDeveloper__photo' ).css( 'transform', `rotateY(${xAxis}deg) rotateX(${yAxis}deg)` );
     } );
 
 });
