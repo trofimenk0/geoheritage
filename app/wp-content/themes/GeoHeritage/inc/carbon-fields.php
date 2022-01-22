@@ -83,6 +83,21 @@ function crb_create_fields() {
                 Field::make( 'image', 'about_page_banner_bg_image', __( 'Banner Background Image' ) )
                     ->set_value_type( 'url' ),
             )
+        )
+        ->add_tab(
+            __( 'Partners' ),
+            array(
+                Field::make( 'complex', 'about_page_partners', __( 'Partners' ) )
+                    ->add_fields( array(
+                        Field::make( 'image', 'logo', __( 'Partner Logo' ) )
+                            ->set_width( 20 ),
+                        Field::make( 'text', 'name', __( 'Partner Name' ) )
+                            ->set_width( 40 ),
+                        Field::make( 'text', 'link', __( 'Partner Link' ) )
+                            ->set_width( 40 ),
+                        Field::make( 'rich_text', 'description', __( 'Description' ) )
+                    ) )
+            )
         );
 
 }

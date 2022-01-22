@@ -19,7 +19,7 @@ $partners_title = carbon_get_theme_option( 'partners_title' );
           <?php foreach ( $partners as $partner ) { 
             
             $logo_id = $partner['partner_logo'];
-            $image_url = wp_get_attachment_image_url( $logo_id, 'thumbnail', true );
+            $image_url = wp_get_attachment_image_url( $logo_id, 'regions-emblems-small', true );
             $image_alt = get_post_meta( $logo_id, '_wp_attachment_image_alt', true );
             ?>
             
