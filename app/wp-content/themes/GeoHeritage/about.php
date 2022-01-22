@@ -111,8 +111,8 @@ while ( have_posts() ) :
                         <div class="aboutDeveloper__socials">
                             <?php foreach ( $about_page_developer_socials as $social ) : ?>
 
-                                <a href="<?php echo $social['link']; ?>" class="aboutDeveloper__socialsItem">
-                                    <img src="<?php echo wp_get_attachment_image_url( $social['logo'], 'large', true ); ?>" alt="" class="aboutDeveloper__socialsItemLogo" rel="nofollow" target="_blank">
+                                <a href="<?php echo $social['link']; ?>" class="aboutDeveloper__socialsItem" rel="nofollow" target="_blank">
+                                    <img src="<?php echo wp_get_attachment_image_url( $social['logo'], 'large', true ); ?>" alt="" class="aboutDeveloper__socialsItemLogo">
                                 </a>
 
                             <?php endforeach; ?>
