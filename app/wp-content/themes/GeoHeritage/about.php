@@ -20,12 +20,18 @@ while ( have_posts() ) :
      */
     $banner_bg_image     = carbon_get_the_post_meta( 'about_page_banner_bg_image' );
     $about_page_partners = carbon_get_the_post_meta( 'about_page_partners' );
+
+    $about_page_developer_photo       = carbon_get_the_post_meta( 'about_page_developer_photo' );
+    $about_page_developer_name        = carbon_get_the_post_meta( 'about_page_developer_name' );
+    $about_page_developer_profession  = carbon_get_the_post_meta( 'about_page_developer_profession' );
+    $about_page_developer_description = carbon_get_the_post_meta( 'about_page_developer_description' );
+    $about_page_developer_socials     = carbon_get_the_post_meta( 'about_page_developer_socials' );
     ?>
 
     <main class="pageAbout">
 
         <!-- Banner -->
-        <section class="aboutBanner" style="background-image: url( '<?php echo $banner_bg_image; ?>' );">
+        <section class="aboutBanner" style="background-image: url( '<?php echo wp_get_attachment_image_url( $banner_bg_image, 'large', true ); ?>' );">
             <div class="aboutBanner__content">
                 <h1 class="aboutBanner__title"><?php the_title(); ?></h1>
                 <div class="breadcrumbs aboutBanner__breadcrumbs">
@@ -40,7 +46,7 @@ while ( have_posts() ) :
         /**
          * Parnters section
          */
-        if ( ! empty( $about_page_partners ) ) { ?>
+        if ( ! empty( $about_page_partners ) ) : ?>
 
             <section class="aboutPartners">
                 <div class="aboutPartners__content">
@@ -76,10 +82,47 @@ while ( have_posts() ) :
                 </div>
             </section>
 
-        <?php } ?>
+        <?php endif; ?>
 
+        <!-- Developer -->
+        <section class="aboutDeveloper">
+            <div class="aboutDeveloper__content">
+                <h2 class="aboutDeveloper__title">
+                    <?php _e( 'Розробник', 'geoheritage' ) ?>
+                </h2>
 
+                <div class="aboutDeveloper__info">
+                    <h3 class="aboutDeveloper__name">
+                        <?php echo $about_page_developer_name; ?>
+                    </h3>
 
+                    <h4 class="aboutDeveloper__profession">
+                        <?php echo $about_page_developer_profession; ?>
+                    </h4>
+
+                    <div class="aboutDeveloper__description">
+                        <?php echo wpautop( $about_page_developer_description ); ?>
+                    </div>
+
+                    <?php if ( ! empty( $about_page_developer_socials ) ) : ?>
+
+                        <div class="aboutDeveloper__socials">
+                            <?php foreach ( $about_page_developer_socials as $social ) : ?>
+
+                                <a href="<?php echo $social['link']; ?>" class="aboutDeveloper__socialsItem">
+                                    <img src="<?php echo wp_get_attachment_image_url( $social['logo'], 'large', true ); ?>" alt="" class="aboutDeveloper__socialsItemLogo" rel="nofollow" target="_blank">
+                                </a>
+
+                            <?php endforeach; ?>
+                        </div>
+
+                    <?php endif; ?>
+                </div>
+
+                <img src="<?php echo wp_get_attachment_image_url( $about_page_developer_photo, 'large', true ); ?>" alt="" class="aboutDeveloper__photo">
+
+            </div>
+        </section>
 
     </main>
 

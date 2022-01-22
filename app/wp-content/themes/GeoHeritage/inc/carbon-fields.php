@@ -80,8 +80,7 @@ function crb_create_fields() {
         ->add_tab(
             __( 'Banner' ),
             array(
-                Field::make( 'image', 'about_page_banner_bg_image', __( 'Banner Background Image' ) )
-                    ->set_value_type( 'url' ),
+                Field::make( 'image', 'about_page_banner_bg_image', __( 'Banner Background Image' ) ),
             )
         )
         ->add_tab(
@@ -96,6 +95,25 @@ function crb_create_fields() {
                         Field::make( 'text', 'link', __( 'Partner Link' ) )
                             ->set_width( 40 ),
                         Field::make( 'rich_text', 'description', __( 'Description' ) )
+                    ) )
+            )
+        )
+        ->add_tab(
+            __( 'Developer' ),
+            array(
+                Field::make( 'image', 'about_page_developer_photo', __( 'Photo' ) )
+                    ->set_width( 20 ),
+                Field::make( 'text', 'about_page_developer_name', __( 'Name' ) )
+                    ->set_width( 40 ),
+                Field::make( 'text', 'about_page_developer_profession', __( 'Profession' ) )
+                    ->set_width( 40 ),
+                Field::make( 'rich_text', 'about_page_developer_description', __( 'Description' ) ),
+                Field::make( 'complex', 'about_page_developer_socials', __( 'Socials' ) )
+                    ->add_fields( array(
+                        Field::make( 'image', 'logo', __( 'Logo' ) )
+                            ->set_width( 20 ),
+                        Field::make( 'text', 'link', __( 'Link' ) )
+                            ->set_width( 80 ),
                     ) )
             )
         );
