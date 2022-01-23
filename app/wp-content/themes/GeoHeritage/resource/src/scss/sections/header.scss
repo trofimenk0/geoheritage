@@ -129,6 +129,7 @@
         }
 
         &:active {
+            transition: all .2s;
             transform: scale(1) rotate(10deg);
         }
     }
@@ -151,7 +152,7 @@
         z-index: 10;
         position: absolute;
         border-radius: 20px;
-        top: calc(100% + 20px);
+        top: calc(100% + 40px);
         background-color: #fff;
         box-shadow: 0 30px 60px 0px rgb(24 24 24 / 6%);
         @include flex(column, flex-start, flex-start, wrap, 20px);
@@ -159,10 +160,12 @@
     }
 
     &__searchFormTitle {
-        margin: 0;
+        width: 100%;
         font-size: 22px;
         font-weight: 500;
         line-height: 30px;
+        position: relative;
+        text-align: center;
     }
 
     &__searchInput {
@@ -243,7 +246,17 @@
         padding: 0;
         border: none;
         display: none;
+        transition: all .3s;
         background-color: transparent;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &:active {
+            transition: all .2s;
+            transform: scale(1);
+        }
     }
 
     /*
@@ -252,9 +265,9 @@
     @media screen and (max-width: 1024px) {
 
         &__primaryMenu {
-            right: 40px;
+            right: 0;
             margin: 0;
-            top: calc(100% + 20px);
+            top: calc(100% + 40px);
             z-index: 10;
             width: 300px;
             padding: 30px;
@@ -266,9 +279,23 @@
             display: none;
 
             a {
-
                 &:hover {
                     padding: 0;
+                    transform: translate(0, -4px);
+                }
+
+                &:active {
+                    transition: all 0.2s;
+                    transform: translate(0, 0);
+
+                    &:after {
+                        bottom: -2px;
+                        transition: all 0.2s;
+                    }
+                }
+
+                &:after {
+                    bottom: -8px;
                 }
             }
         }
@@ -289,14 +316,6 @@
 
     @media screen and (max-width: 768px) {
         padding: 20px;
-
-        &__primaryMenu {
-            right: 20px;
-        }
-
-        &__searchForm {
-            right: 20px;
-        }
     }
 
     @media screen and (max-width: 600px) {
