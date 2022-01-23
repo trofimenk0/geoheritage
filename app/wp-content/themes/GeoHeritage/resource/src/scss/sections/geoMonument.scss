@@ -189,8 +189,22 @@
         height: 40px;
         border: none;
         position: absolute;
+        transition: all 0.3s;
         background-color: transparent;
         @include flex(row, center, center, nowrap);
+
+        &:hover {
+            transform: scale(1.1);
+
+            path {
+                stroke: $green-color;
+            }
+        }
+        
+        &:active {
+            transform: scale(1);
+            transition: all 0.2s;
+        }
     }
 
     // &__sliderWrapper {
@@ -217,19 +231,41 @@
         max-height: 100%;
         object-fit: cover;
         border-radius: 30px;
-        box-shadow: 0px 10px 60px 0px rgb(0 0 0 / 10%);
+        // box-shadow: 0px 10px 60px 0px rgb(0 0 0 / 10%);
     }
 
     &__sliderNavNext {
         right: 50px;
         z-index: 30;
         color: #000;
+        transition: all 0.3s;
+
+        &:hover {
+            right: 48px;
+            color: $green-color;
+        }
+        
+        &:active {
+            right: 46px;
+            transition: all 0.2s;
+        }
     }
 
     &__sliderNavPrev {
         left: 50px;
         z-index: 30;
         color: #000;
+        transition: all 0.3s;
+
+        &:hover {
+            left: 48px;
+            color: $green-color;
+        }
+        
+        &:active {
+            left: 46px;
+            transition: all 0.2s;
+        }
     }
 
 

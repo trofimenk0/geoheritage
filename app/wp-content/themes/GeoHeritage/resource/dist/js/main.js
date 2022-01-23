@@ -75,7 +75,7 @@ $(function () {
     */
     $( '.geoMonument__galleryItem' ).on( 'click', function( event ) {
       event.preventDefault();
-      $( '.geoMonument__slider' ).fadeIn( 200 );
+      $( '.geoMonument__slider' ).fadeIn( 500 );
 
       let index = $(this).data('index');
       if ( index ) {
