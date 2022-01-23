@@ -1,5 +1,5 @@
 .aboutPartners {
-    padding: 100px 0;
+    padding: 100px 40px;
 
     &__content {
         width: 100%;
@@ -10,11 +10,11 @@
 
     &__title {
         flex-basis: 100%;
-        font-size: 36px;
         font-weight: 500;
         position: static;
         line-height: 36px;
         text-align: center;
+        font-size: calc(20px + (36 - 20) * ((100vw - 320px) / (1920 - 320)));
     }
 
     &__item {
@@ -120,5 +120,22 @@
         width: 24px;
         height: 12px;
         transition: all 0.5s;
+    }
+
+    /*
+        Media queries
+    */
+    @media screen and ( max-width: 1200px ) {
+        &__item {
+            @include flex(column, center, flex-start, wrap, 40px);
+        }
+    }
+
+    @media screen and ( max-width: 1024px ) {
+        padding: 60px 40px;
+    }
+
+    @media screen and ( max-width: 768px ) {
+        padding: 60px 20px;
     }
 }

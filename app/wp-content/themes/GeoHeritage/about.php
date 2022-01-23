@@ -38,7 +38,7 @@ while ( have_posts() ) :
                     <?php echo geoHeritageBreadcrumbs(); ?>
                 </div>
 
-                <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="homeBanner__image">
+                <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="aboutBanner__image">
             </div>
         </section>
 

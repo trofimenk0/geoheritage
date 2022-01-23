@@ -1,21 +1,21 @@
 .aboutDeveloper {
-    padding: 100px 0;
+    padding: 100px 40px;
 
     &__content {
         width: 100%;
         margin: 0 auto;
         max-width: 1600px;
-        @include flex(row, stretch, space-between, wrap)
+        @include flex(row, stretch, space-between, wrap);
     }
     
     &__title {
         flex-basis: 100%;
-        font-size: 36px;
         font-weight: 500;
         position: static;
         line-height: 36px;
         text-align: center;
         margin: 0 0 60px 0;
+        font-size: calc(20px + (36 - 20) * ((100vw - 320px) / (1920 - 320)));
     }
 
     &__info {
@@ -122,5 +122,52 @@
         transform-style: preserve-3d;
         -webkit-transform-style: preserve-3d;
         box-shadow: 0 10px 60px 0 rgb(23 23 23 / 4%);
+    }
+
+    /*
+        Media queries
+    */
+    @media screen and ( max-width: 1440px ) {
+        &__content {
+            align-items: flex-start;
+        }
+
+        &__photoWrapper {
+            flex-basis: 34%;
+        }
+    }
+
+    @media screen and ( max-width: 1200px ) {
+        &__content {
+            @include flex(column, center, flex-start, wrap, 40px);
+        }
+
+        &__title {
+            order: 1;
+        }
+
+        &__photoWrapper {
+            order: 2;
+            width: 400px;
+            height: 400px;
+            flex-basis: unset;
+        }
+
+        &__info {
+            order: 3;
+        }
+    }
+
+    @media screen and ( max-width: 1024px ) {
+        padding: 60px 40px;
+    }
+
+    @media screen and ( max-width: 768px ) {
+        padding: 60px 20px;
+
+        &__socialsItem {
+            width: 40px;
+            height: 40px;
+        }
     }
 }

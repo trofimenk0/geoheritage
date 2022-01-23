@@ -1,5 +1,5 @@
 .aboutBanner {
-    padding: 200px 0;
+    padding: 200px 40px;
     background-size: cover;
     background-position: center center;
 
@@ -15,9 +15,9 @@
 
     &__title {
         margin: 0;
-        font-size: 60px;
         font-weight: 500;
         line-height: 80px;
+        font-size: calc(24px + (60 - 24) * ((100vw - 320px) / (1920 - 320)));
     }
 
     &__breadcrumbs {
@@ -74,5 +74,30 @@
         margin: auto;
         display: block;
         filter: drop-shadow(0 10px 50px rgb(0 0 0 / 10%));
+    }
+
+    /*
+        Media queries
+    */
+    @media screen and ( max-width: 1440px ) {
+        &__title {
+            line-height: 60px;
+        }
+    }
+
+    @media screen and ( max-width: 1024px ) {
+        padding: 200px 40px 60px 40px;
+
+        &__title {
+            line-height: 40px;
+        }
+
+        &__image {
+            width: 200px;
+        }
+    }
+
+    @media screen and ( max-width: 768px ) {
+        padding: 200px 20px 60px 20px;
     }
 }
