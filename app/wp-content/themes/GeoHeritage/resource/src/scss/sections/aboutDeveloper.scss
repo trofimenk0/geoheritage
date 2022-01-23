@@ -144,6 +144,7 @@
 
         &__title {
             order: 1;
+            margin: 0;
         }
 
         &__photoWrapper {
@@ -168,6 +169,12 @@
         &__socialsItem {
             width: 40px;
             height: 40px;
+        }
+    }
+
+    @media screen and ( max-width: 600px ) {
+        &__info {
+            padding: 20px;
         }
     }
 }

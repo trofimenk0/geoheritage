@@ -137,5 +137,16 @@
 
     @media screen and ( max-width: 768px ) {
         padding: 60px 20px;
+
+        &__itemLink {
+            padding: 6px 30px;
+        }
+    }
+
+    @media screen and ( max-width: 600px ) {
+        &__itemInfo {
+            gap: 20px;
+            padding: 20px;
+        }
     }
 }

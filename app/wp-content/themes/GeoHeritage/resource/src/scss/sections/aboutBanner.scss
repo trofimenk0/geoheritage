@@ -100,4 +100,10 @@
     @media screen and ( max-width: 768px ) {
         padding: 200px 20px 60px 20px;
     }
+
+    @media screen and ( max-width: 600px ) {
+        &__content {
+            gap: 40px;
+        }
+    }
 }
