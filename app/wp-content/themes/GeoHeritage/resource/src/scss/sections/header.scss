@@ -7,6 +7,11 @@
     padding: 20px 40px;
     transition: all 0.3s;
 
+    &_blurred {
+        backdrop-filter: blur(20px);
+        background-color: rgb(255 255 255 / 70%);
+    }
+
     &_scrolling {
         backdrop-filter: blur(20px);
         background-color: rgb(255 255 255 / 70%);

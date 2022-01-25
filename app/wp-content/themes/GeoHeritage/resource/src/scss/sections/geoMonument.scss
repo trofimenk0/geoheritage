@@ -3,7 +3,7 @@
 
     &__banner {
         color: #fff;
-        padding: 300px 0;
+        padding: 300px 40px;
         position: relative;
         text-align: center;
         background-size: cover;
@@ -12,44 +12,34 @@
         background-attachment: fixed;
         box-shadow: 0 20px 60px 0 rgb(0 0 0 / 10%);
         @include flex(column, center, center, nowrap, 60px);
-
-        &::before {
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 200px;
-            content: '';
-            position: absolute;
-            background: linear-gradient(#fff, transparent);
-        }
     }
 
     &__title {
         width: 100%;
-        font-size: 60px;
         font-weight: 500;
         max-width: 1000px;
-        line-height: 80px;
         text-shadow: 0 6px 10px rgb(0 0 0 / 50%);
+        font-size: calc(32px + (60 - 32) * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(40px + (80 - 40) * ((100vw - 320px) / (1920 - 320)));
     }
 
     &__breadcrumbs {
-        width: 100%;
-        padding: 40px 0;
+        width: auto;
+        padding: 40px;
         font-size: 18px;
         line-height: 28px;
-        max-width: 1000px;
         border-radius: 20px;
         backdrop-filter: blur(10px);
         border: 1px solid rgb(255 255 255 / 50%);
-        box-shadow: 0 10px 30px 0 rgb(0 0 0 / 10%);
-        @include flex(row, center, center, nowrap, 10px);
+        box-shadow: 0 10px 30px 0 rgb(0 0 0 / 20%);
+        @include flex(row, center, center, wrap, 10px);
 
         a {
             color: #fff;
             position: relative;
             transition: all .3s;
             text-decoration: none;
+            text-shadow: 0 6px 10px rgb(0 0 0 / 50%);
 
             &::after {
                 content: "";
@@ -85,7 +75,7 @@
     }
 
     &__description {
-        padding: 100px 0;
+        padding: 60px 40px;
         @include flex(row, center, center, nowrap);
     }
 
@@ -105,28 +95,28 @@
     }
 
     &__gallery {
-        padding: 0 0 100px 0;
+        padding: 0 40px 60px 40px;
         @include flex(column, center, center, nowrap);
     }
 
     &__galleryTitle {
         width: 100%;
-        font-size: 28px;
         font-weight: 600;
         text-align: left;
-        line-height: 36px;
         max-width: 1600px;
         margin: 0 0 60px 0;
+        font-size: calc(28px + (38 - 28) * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(36px + (52 - 36) * ((100vw - 320px) / (1920 - 320)));
     }
 
     &__galleryContent {
         width: 100%;
         max-width: 1600px;
-        @include flex(row, center, space-between, wrap, 40px);
+        @include flex(row, center, flex-start, wrap, 60px 2%);
     }
 
     &__galleryItem {
-        flex: 23%;
+        flex-basis: 23.5%;
         height: 290px;
         display: block;
         cursor: pointer;
@@ -231,7 +221,6 @@
         max-height: 100%;
         object-fit: cover;
         border-radius: 30px;
-        // box-shadow: 0px 10px 60px 0px rgb(0 0 0 / 10%);
     }
 
     &__sliderNavNext {
@@ -268,5 +257,153 @@
         }
     }
 
+    /*
+        Media Queries
+    */
+    @media screen and (max-width: 1600px) {
+        &__galleryItem {
+            height: 250px;
+        }
+    }
 
+    @media screen and (max-width: 1440px) {
+        &__galleryContent {
+            gap: 40px 2%;
+        }
+
+        &__galleryItem {
+            height: 220px;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        &__galleryItem {
+            flex-basis: 32%;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        &__galleryItem {
+            height: 200px;
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        &__galleryItem {
+            height: 180px;
+        }
+
+        &__sliderSlide {
+            padding: 60px;
+        }
+
+        &__sliderNavPrev {
+            left: 20px;
+
+            &:hover {
+                left: 18px;
+            }
+
+            &:active {
+                left: 16px;
+            }
+        }
+
+        &__sliderNavNext {
+            right: 20px;
+
+            &:hover {
+                right: 18px;
+            }
+
+            &:active {
+                right: 16px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        &__banner {
+            gap: 40px;
+            padding: 200px 20px;
+        }
+
+        &__breadcrumbs {
+            padding: 20px 40px;
+        }
+
+        &__description {
+            padding: 60px 20px;
+        }
+
+        &__gallery {
+            padding: 0 20px 60px 20px;
+        }
+
+        &__galleryItem {
+            height: 140px;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        &__galleryContent {
+            gap: 40px 4%;
+        }
+
+        &__galleryItem {
+            height: 180px;
+            flex-basis: 48%;
+        }
+
+        &__sliderSlide {
+            padding: 40px 20px;
+        }
+
+        &__sliderImage {
+            width: auto;
+            height: 100%;
+            max-width: 100%;
+            max-height: 500px;
+        }
+
+        &__sliderClose {
+            width: 30px;
+            height: 30px;
+        }
+
+        &__sliderNavPrev {
+            width: auto;
+            padding: 0 10px;
+            border-radius: 6px;
+            background-color: #fff;
+            @include flex(row, center, center, nowrap);
+
+            &::after {
+                font-size: 32px;
+            }
+        }
+
+        &__sliderNavNext {
+            width: auto;
+            padding: 0 10px;
+            border-radius: 6px;
+            background-color: #fff;
+            @include flex(row, center, center, nowrap);
+
+            &::after {
+                font-size: 32px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        &__galleryItem {
+            height: 200px;
+            flex-basis: 100%;
+        }
+
+        &__sliderImage {
+            max-height: 300px;
+        }
+    }
 }

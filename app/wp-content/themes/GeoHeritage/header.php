@@ -26,8 +26,16 @@
         <circle class="pl__ring pl__ring--d" cx="155" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round" />
       </svg>
     </div> -->
+
+    <?php
+    $header_classes = '';
+
+    if ( is_singular( 'geological_monuments' ) ) {
+      $header_classes .= ' header_blurred';
+    }
+    ?>
     
-    <header class="header">
+    <header class="header<?php echo $header_classes; ?>">
 
       <div class="header__container">
         <?php the_custom_logo(); ?>
