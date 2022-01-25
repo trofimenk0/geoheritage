@@ -14,10 +14,10 @@
     }
 
     &__title {
-        font-size: 60px;
         font-weight: 500;
-        line-height: 80px;
         margin: 0 0 50px 0;
+        font-size: calc(24px + (60 - 24) * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(40px + (80 - 40) * ((100vw - 320px) / (1920 - 320)));
 
         .blue {
             color: $blue-color;
@@ -45,20 +45,11 @@
     */
     @media screen and (max-width: 1440px) {
         background-position: center center;
-
-        &__title {
-            line-height: 60px;
-            font-size: calc(24px + (56 - 24) * ((100vw - 320px) / (1440 - 320)));
-        }
     }
 
     @media screen and (max-width: 1024px) {
         padding: 200px 40px 60px 40px;
         background-size: 180%;
-
-        &__title {
-            line-height: 40px;
-        }
     }
 
     @media screen and (max-width: 768px) {

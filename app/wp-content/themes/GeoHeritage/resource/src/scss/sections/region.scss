@@ -2,7 +2,7 @@
 
     &__banner {
         position: relative;
-        padding: 200px 0 100px 0;
+        padding: 200px 40px 100px 40px;
         background-position: center;
         background-repeat: no-repeat;
         @include flex(column, center, center, nowrap);
@@ -37,17 +37,19 @@
     }
 
     &__emblem {
+        width: 250px;
+        height: auto;
         display: block;
         filter: drop-shadow(0 20px 60px rgb(0 0 0 / 6%));
     }
 
     &__name {
         color: #fff;
-        font-size: 60px;
         font-weight: 500;
-        line-height: 80px;
         text-align: center;
         margin: 40px 0 0 0;
+        font-size: calc(24px + (60 - 24) * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(40px + (80 - 40) * ((100vw - 320px) / (1920 - 320)));
     }
 
     &__description {
@@ -70,7 +72,7 @@
     }
 
     &__monuments {
-        padding: 100px 0;
+        padding: 100px 40px;
         background-color: #fdfdfd;
     }
 
@@ -87,13 +89,13 @@
         width: 100%;
         margin: 0 auto;
         max-width: 1600px;
-        @include flex(row, stretch, space-between, wrap, 80px 40px);
+        @include flex(row, stretch, flex-start, wrap, 80px 2.5%);
     }
 
     &__monumentsItem {
         color: #000;
         height: 200px;
-        flex-basis: 17%;
+        flex-basis: 18%;
         overflow: hidden;
         line-height: 22px;
         position: relative;
@@ -163,5 +165,113 @@
         height: 0;
         margin: 0;
         transition: all 0.3s;
+    }
+
+    /*
+        Media Queries
+    */
+    @media screen and (max-width: 1600px) {
+        &__monumentsList {
+            gap: 80px 4%;
+        }
+
+        &__monumentsItem {
+            height: 240px;
+            flex-basis: 22%;
+        }
+    }
+
+    @media screen and (max-width: 1440px) {
+        &__monumentsItem {
+            height: 200px;
+            flex-basis: 22%;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        &__description {
+            max-width: 100%;
+        }
+
+        &__monumentsList {
+            gap: 80px 5%;
+        }
+
+        &__monumentsItem {
+            height: 240px;
+            flex-basis: 30%;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        &__banner {
+            padding: 200px 40px 60px 40px;
+        }
+
+        &__description {
+            padding: 60px 40px;
+        }
+
+        &__monumentsList {
+            gap: 60px 5%;
+        }
+
+        &__monumentsItem {
+            height: 200px;
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        &__monumentsItem {
+            height: 180px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        &__banner {
+            padding: 200px 20px 60px 20px;
+        }
+
+        &__emblem {
+            width: 200px;
+        }
+
+        &__description {
+            padding: 0 20px;
+        }
+
+        &__monuments {
+            padding: 60px 20px;
+        }
+        
+        &__monumentsList {
+            gap: 40px 4%;
+        }
+
+        &__monumentsItem {
+            height: 220px;
+            flex-basis: 48%;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        &__emblem {
+            width: 160px;
+        }
+
+        &__descriptionContent {
+            padding: 20px;
+        }
+
+        &__monumentsItem {
+            height: 200px;
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        &__monumentsItem {
+            height: 240px;
+            flex-basis: 100%;
+        }
     }
 }
