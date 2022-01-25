@@ -23,10 +23,10 @@
     &__title {
         font-weight: 600;
         position: static;
-        line-height: 36px;
         margin: 0 0 20px 0;
         text-align: center;
-        font-size: calc(20px + (28 - 20) * ((100vw - 320px) / (1920 - 320)));
+        font-size: calc(28px + (38 - 28) * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(36px + (52 - 36) * ((100vw - 320px) / (1920 - 320)));
     }
 
     /*

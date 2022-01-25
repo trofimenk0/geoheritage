@@ -12,9 +12,9 @@
         flex-basis: 100%;
         font-weight: 500;
         position: static;
-        line-height: 36px;
         text-align: center;
-        font-size: calc(20px + (36 - 20) * ((100vw - 320px) / (1920 - 320)));
+        font-size: calc(28px + (38 - 28) * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(36px + (52 - 36) * ((100vw - 320px) / (1920 - 320)));
     }
 
     &__item {
@@ -144,9 +144,19 @@
     }
 
     @media screen and ( max-width: 600px ) {
+        &__itemLogoWrapper {
+            width: 300px;
+        }
+
         &__itemInfo {
             gap: 20px;
             padding: 20px;
+        }
+    }
+
+    @media screen and ( max-width: 450px ) {
+        &__itemLogoWrapper {
+            width: 260px;
         }
     }
 }

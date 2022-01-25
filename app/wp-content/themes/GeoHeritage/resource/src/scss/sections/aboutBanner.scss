@@ -16,8 +16,8 @@
     &__title {
         margin: 0;
         font-weight: 500;
-        line-height: 80px;
-        font-size: calc(24px + (60 - 24) * ((100vw - 320px) / (1920 - 320)));
+        font-size: calc(32px + (60 - 32) * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(40px + (80 - 40) * ((100vw - 320px) / (1920 - 320)));
     }
 
     &__breadcrumbs {
@@ -79,18 +79,8 @@
     /*
         Media queries
     */
-    @media screen and ( max-width: 1440px ) {
-        &__title {
-            line-height: 60px;
-        }
-    }
-
     @media screen and ( max-width: 1024px ) {
         padding: 200px 40px 60px 40px;
-
-        &__title {
-            line-height: 40px;
-        }
 
         &__image {
             width: 200px;
@@ -105,5 +95,13 @@
         &__content {
             gap: 40px;
         }
+
+        &__image {
+            width: 160px;
+        }
+    }
+
+    @media screen and ( max-width: 450px ) {
+        
     }
 }

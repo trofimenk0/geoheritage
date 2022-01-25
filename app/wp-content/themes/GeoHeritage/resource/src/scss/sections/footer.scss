@@ -18,11 +18,10 @@
     }
 
     &__partnersTitle {
-        margin: 0;
         font-weight: 500;
-        line-height: 30px;
         margin: 0 0 20px 0;
-        font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
+        font-size: calc(22px + (30 - 22) * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(32px + (42 - 32) * ((100vw - 320px) / (1920 - 320)));
     }
 
     &__partnersLink {
@@ -119,9 +118,9 @@
 
     &__menuTitle {
         font-weight: 500;
-        line-height: 30px;
         margin: 0 0 20px 0;
-        font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
+        font-size: calc(22px + (30 - 22) * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(32px + (42 - 32) * ((100vw - 320px) / (1920 - 320)));
     }
 
     /*
