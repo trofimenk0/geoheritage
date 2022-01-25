@@ -41,11 +41,11 @@
         width: 100%;
         margin: 0 auto;
         max-width: 1600px;
-        @include flex(row, stretch, space-between, wrap, 80px 0);
+        @include flex(row, stretch, flex-start, wrap, 80px 2.5%);
     }
 
     &__region {
-        flex-basis: 17%;
+        flex-basis: 18%;
         color: #000;
         line-height: 22px;
         position: relative;
@@ -108,8 +108,12 @@
         Media Queries
     */
     @media screen and (max-width: 1600px) {
+        &__list {
+            gap: 80px 4%;
+        }
+
         &__region {
-            flex-basis: 21%;
+            flex-basis: 22%;
             padding: 90px 20px 20px 20px;
         }
 
@@ -118,14 +122,11 @@
         }
     }
 
-    @media screen and (max-width: 1440px) {
-        &__region {
-            min-width: 255px;
-            flex-basis: 23%;
-        }
-    }
-
     @media screen and (max-width: 1200px) {
+        &__list {
+            gap: 80px 5%;
+        }
+
         &__region {
             flex-basis: 30%;
         }
@@ -147,21 +148,15 @@
             bottom: 4%;
             height: 50%;
         }
-
-        &__region {
-            min-width: unset;
-        }
     }
 
     @media screen and (max-width: 768px) {
         padding: 60px 20px;
 
-        &__region {
-            flex-basis: 46%;
+        &__list {
+            gap: 80px 4%;
         }
-    }
 
-    @media screen and (max-width: 600px) {
         &__region {
             flex-basis: 48%;
         }
@@ -173,8 +168,8 @@
         }
 
         &__region {
-            flex-basis: 100%;
             max-width: 300px;
+            flex-basis: 100%;
         }
     }
 }
