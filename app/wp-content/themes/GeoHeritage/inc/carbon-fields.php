@@ -33,10 +33,8 @@ function crb_create_fields() {
                 Field::make( 'text', 'front_page_banner_title', __( 'Banner Title' ) )
                     ->set_width( 60 ),
                 Field::make( 'image', 'front_page_banner_bg_image', __( 'Banner Background Image' ) )
-                    ->set_value_type( 'url' )
                     ->set_width( 20 ),
                 Field::make( 'image', 'front_page_banner_image', __( 'Banner Content Image' ) )
-                    ->set_value_type( 'url' )
                     ->set_width( 20 ),
                 Field::make( 'textarea', 'front_page_banner_text', __( 'Banner Text' ) ),
             )

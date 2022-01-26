@@ -58,7 +58,7 @@ while ( have_posts() ) :
                         
                         <div class="aboutPartners__item">
                             <div class="aboutPartners__itemLogoWrapper">
-                                <img src="<?php echo wp_get_attachment_image_url( $partner['logo'], 'medium', true ) ?>" alt="" class="aboutPartners__itemLogo">
+                                <img src="<?php echo wp_get_attachment_image_url( $partner['logo'], 'medium', true ); ?>" alt="" class="aboutPartners__itemLogo">
                             </div>
 
                             <div class="aboutPartners__itemInfo">

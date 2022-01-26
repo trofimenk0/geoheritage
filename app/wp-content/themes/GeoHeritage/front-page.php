@@ -28,13 +28,13 @@ if ( have_posts() ) {
 <main class="homePage">
 
     <!-- Banner -->
-    <section class="homeBanner" style="background-image: url( '<?php echo $banner_bg_image; ?>' );">
+    <section class="homeBanner" style="background-image: url( '<?php echo wp_get_attachment_image_url( $banner_bg_image, 'full', true ); ?>' );">
         <div class="homeBanner__content">
             <h1 class="homeBanner__title"><?php echo $banner_title; ?></h1>
             <p class="homeBanner__text"><?php echo $banner_text; ?></p>
         </div>
 
-        <img src="<?php echo $banner_image; ?>" alt="" class="homeBanner__image">
+        <img src="<?php echo wp_get_attachment_image_url( $banner_image, 'full', true ); ?>" alt="" class="homeBanner__image">
     </section>
 
     <!-- Description -->
