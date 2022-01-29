@@ -85,3 +85,82 @@ function geo_custom_post_type_geological_monuments() {
 	
 }
 add_action( 'init', 'geo_custom_post_type_geological_monuments', 0 );
+
+/*
+* Add the custom columns to the geological_monuments post type:
+*/
+add_filter( 'manage_geological_monuments_posts_columns', 'set_custom_edit_geological_monuments_columns' );
+function set_custom_edit_geological_monuments_columns( $columns ) {
+    $region_of_ukraine_column['region_of_ukraine'] = __( 'Region of Ukraine', 'geoheritage' );
+	$columns = array_slice( $columns, 0, 2 ) + $region_of_ukraine_column + $columns;
+
+	$monument_thumb_column['monument_thumb'] = __( 'Thumbnail', 'geoheritage' );
+	$columns = array_slice( $columns, 0, 1 ) + $monument_thumb_column + $columns;
+
+	return $columns;
+}
+
+/*
+* Add the data to the custom columns for the bogeological_monumentsok post type:
+*/
+add_action( 'manage_geological_monuments_posts_custom_column' , 'custom_geological_monuments_column', 10, 2 );
+function custom_geological_monuments_column( $column_name ) {
+	switch ( $column_name ) {
+		case 'region_of_ukraine':
+			$regions_of_ukraine = get_the_terms( get_the_ID(), 'regions_of_ukraine' );
+
+			foreach ( $regions_of_ukraine as $region ) {
+				?>
+				<a href="<?php echo get_edit_term_link( $region->term_id, 'regions_of_ukraine' ); ?>">
+					<?php _e( $region->name, 'geoheritage' ); ?>
+				</a>
+				<?php
+			}
+			break;
+
+		case 'monument_thumb':
+			?>
+			<a href="<?php echo get_edit_post_link(); ?>">
+				<?php 
+				if ( has_post_thumbnail() ) {
+					the_post_thumbnail( 'thumbnail' );
+				} else {
+					echo '<img src="' . get_template_directory_uri() . '/resource/dist/images/GoeMonumentImagePlaceholder.svg" alt="Geological monument image" class="region__monumentsItemImage">';
+				}
+				?>
+			</a>
+			<?php
+			break;
+	}
+}
+
+/*
+* Add styles for registered columns
+*/
+add_action( 'admin_print_footer_scripts-edit.php', function () {
+	?>
+	<style>
+		.type-geological_monuments:hover .monument_thumb img {
+			box-shadow: 0 10px 20px 0 rgb(23 23 23 / 10%);
+		}
+
+		.column-monument_thumb {
+			width: 180px;
+		}
+
+		.monument_thumb a {
+			display: block;
+		}
+
+		.monument_thumb img {
+			width: 100%;
+			height: 130px;
+			max-width: unset;
+			max-height: unset;
+			object-fit: cover;
+			border-radius: 10px;
+    		transition: all 0.3s;
+		}
+	</style>
+	<?php
+} );
