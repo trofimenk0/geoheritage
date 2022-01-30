@@ -66,6 +66,40 @@
                 margin: 10px 0 0 0;
             }
         }
+
+        a {
+            color: #000;
+            position: relative;
+            transition: all 0.3s;
+            display: inline-block;
+
+            &:hover {
+                transform: translate(0, -4px);
+
+                &::after {
+                    bottom: -6px;
+                }
+            }
+
+            &:active {
+                transform: translate(0, 0);
+
+                &::after {
+                    bottom: 0;
+                }
+            }
+
+            &::after {
+                width: 100%;
+                height: 2px;
+                content: '';
+                left: 0;
+                bottom: 0;
+                position: absolute;
+                transition: all 0.3s;
+                background-color: $green-color;
+            }
+        }
     }
 
     &__socials {
