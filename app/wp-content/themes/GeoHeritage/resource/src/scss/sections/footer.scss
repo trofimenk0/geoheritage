@@ -148,14 +148,14 @@
     */
     @media screen and (max-width: 1024px) {
         &__content {
-            gap: 60px;
+            gap: 40px 60px;
             padding: 60px 40px;
         }
     }
 
     @media screen and (max-width: 992px) {
         &__content{
-            gap: 0;
+            gap: 40px 0;
             @include flex(row, flex-start, space-between, wrap);
         }
         
