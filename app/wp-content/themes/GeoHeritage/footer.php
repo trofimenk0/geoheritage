@@ -36,7 +36,34 @@ $partners_title = carbon_get_theme_option( 'partners_title' );
 
         <nav class="footer__menu">
           <h3 class="footer__menuTitle">
-            Популярні області
+            <?php _e( 'Державні портали', 'geoheritage' ); ?>
+          </h3>
+
+          <?php $menuArgs = array(
+            'theme_location'  => 'Second footer menu',
+            'menu'            => 'Footer gov menu', 
+            'container'       => false, 
+            'container_class' => '', 
+            'container_id'    => '',
+            'menu_class'      => '', 
+            'menu_id'         => '',
+            'echo'            => false,
+            'fallback_cb'     => 'wp_page_menu',
+            'before'          => '',
+            'after'           => '',
+            'link_before'     => '',
+            'link_after'      => '',
+            'items_wrap'      => '%3$s',
+            'depth'           => 0,
+            'walker'          => '',
+          );
+
+          echo strip_tags(wp_nav_menu( $menuArgs ), '<a>' ); ?>
+        </nav>
+
+        <nav class="footer__menu">
+          <h3 class="footer__menuTitle">
+            <?php _e( 'Популярні області', 'geoheritage' ); ?>
           </h3>
 
           <?php $menuArgs = array(

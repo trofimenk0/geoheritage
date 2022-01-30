@@ -26,6 +26,7 @@ function geoheritage_theme_setup() {
 	register_nav_menus( array(
 		'main_menu' => __( 'Primary menu', 'geoheritage' ),
 		'footer_menu' => __( 'Footer menu', 'geoheritage' ),
+		'footer_menu_second' => __( 'Second footer menu', 'geoheritage' ),
 	) );
 
 	/*
