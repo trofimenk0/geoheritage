@@ -18,7 +18,7 @@
         width: 100%;
         font-weight: 500;
         max-width: 1000px;
-        text-shadow: 0 6px 10px rgb(0 0 0 / 50%);
+        text-shadow: 0 2px 4px rgb(0 0 0 / 50%);
         font-size: calc(32px + (60 - 32) * ((100vw - 320px) / (1920 - 320)));
         line-height: calc(40px + (80 - 40) * ((100vw - 320px) / (1920 - 320)));
     }
@@ -30,6 +30,8 @@
         line-height: 28px;
         border-radius: 20px;
         backdrop-filter: blur(10px);
+        text-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+        background-color: rgb(255 255 255 / 10%);
         border: 1px solid rgb(255 255 255 / 50%);
         box-shadow: 0 10px 30px 0 rgb(0 0 0 / 20%);
         @include flex(row, center, center, wrap, 10px);
@@ -39,7 +41,6 @@
             position: relative;
             transition: all .3s;
             text-decoration: none;
-            text-shadow: 0 6px 10px rgb(0 0 0 / 50%);
 
             &::after {
                 content: "";
