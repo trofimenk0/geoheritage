@@ -2,6 +2,10 @@ $(function () {
     /*
      Livesearch
     */
+    $( '#searchform' ).on( 'submit', function( event) {
+      event.preventDefault();
+    } );
+
     $( '.header__searchSubmit' ).on( 'focus', function() {
         if ( ! $( '.header__searchForm' ).hasClass( 'header__searchForm_active' ) ) {
             $( '.header__searchForm' ).addClass( 'header__searchForm_active' ).css( 'display', 'flex' ).hide().fadeIn( 300 );
