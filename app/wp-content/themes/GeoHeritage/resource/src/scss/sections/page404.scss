@@ -1,0 +1,62 @@
+.notFoundPage {
+
+    &__content {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1600px;
+        padding: 200px 40px;
+        @include flex(column, center, flex-start, nowrap, 60px);
+    }
+
+    &__image {
+        width: 300px;
+        height: auto;
+    }
+
+    &__title {
+        font-weight: 500;
+        text-align: center;
+        font-size: calc(28px + (38 - 28) * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(36px + (52 - 36) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    &__link {
+        font-size: 16px;
+        line-height: 30px;
+        padding: 10px 40px;
+        color: $green-color;
+        border-radius: 20px;
+        transition: all 0.3s;
+        border: 2px solid $green-color;
+
+        &:hover {
+            color: #fff;
+            transform: translate(0, -4px);
+            background-color: $green-color;
+            box-shadow: 0 10px 20px 0 rgb(23 23 23 / 6%);
+        }
+
+        &:active {
+            transition: all 0.2s;
+            transform: translate(0, 0);
+        }
+    }
+
+    /*
+        Media queries
+    */
+    @media screen and (max-width: 768px) {
+        &__content {
+            gap: 40px;
+            padding: 200px 20px 100px 20px;
+        }
+
+        &__image {
+            width: 200px;
+        }
+
+        &__link {
+            padding: 10px 20px;
+        }
+    }
+}

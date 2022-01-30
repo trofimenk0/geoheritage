@@ -19,6 +19,8 @@ function crb_create_fields() {
                         ->set_width( 40 ),
                 ) ),
             Field::make( 'text', 'copyright_text', __( 'Copyright Text' ) ),
+            Field::make( 'separator', 'page_404_separator', __( 'Page 404' ) ),
+            Field::make( 'image', 'page_404_image', __( 'Image' ) ),
         ) );
 
 
