@@ -5,12 +5,17 @@ while ( have_posts() ) :
 	the_post(); 
 
     $monument_id = get_the_ID();
-    
+
+    if ( has_post_thumbnail() ) :
+        $post_thumbnail = get_the_post_thumbnail_url( $monument_id, 'full' );
+    else :
+        $post_thumbnail = get_template_directory_uri() . '/resource/dist/images/GoeMonumentImagePlaceholder.svg';
+    endif;
     ?>
 
     <main class="geoMonument">
 
-        <section class="geoMonument__banner" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
+        <section class="geoMonument__banner" style="background-image: url(<?php echo $post_thumbnail; ?>)">
             <h1 class="geoMonument__title"><?php the_title(); ?></h1>
 
             <div class="breadcrumbs geoMonument__breadcrumbs">
