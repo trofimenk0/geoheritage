@@ -330,7 +330,10 @@
         }
 
         &__breadcrumbs {
-            padding: 20px 40px;
+            padding: 20px;
+            text-align: left;
+            justify-content: flex-start;
+
         }
 
         &__description {
