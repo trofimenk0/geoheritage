@@ -125,10 +125,22 @@
      Footer copyright section
     */
     &__copyright {
-        color: #fff;
         padding: 20px 0;
-        background-color: $green-color;
+        position: relative;
+        color: $green-color;
         @include flex(row, center, center, wrap);
+
+        &:after {
+            top: 0;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            content: '';
+            max-width: 1600px;
+            position: absolute;
+            background-color: $green-color;
+            transform: translate(-50%, 0%);
+        }
     }
 
     /*
