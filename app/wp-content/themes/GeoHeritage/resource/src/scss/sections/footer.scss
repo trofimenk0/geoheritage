@@ -13,7 +13,6 @@
      Footer partners section
     */
     &__partners {
-        flex-basis: 300px;
         @include flex(column, flex-start, flex-start, nowrap, 20px);
     }
 
@@ -71,7 +70,6 @@
      Footer menu section
     */
     &__menu {
-        flex-basis: 300px;
         color: #000;
         font-size: 16px;
         line-height: 24px;
