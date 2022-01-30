@@ -13,6 +13,7 @@
      Footer partners section
     */
     &__partners {
+        flex-basis: 300px;
         @include flex(column, flex-start, flex-start, nowrap, 20px);
     }
 
