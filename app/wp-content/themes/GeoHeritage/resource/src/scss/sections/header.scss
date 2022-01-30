@@ -44,8 +44,8 @@
         }
 
         &:active {
+            transform: scale(1);
             transition: all 0.2s;
-            transform: scale(0.95);
         }
     }
 
@@ -214,36 +214,29 @@
     }
 
     &__searchResultLink {
+        color: #171717;
         padding: 10px 0;
         position: relative;
-        color: $blue-color;
-        border-radius: 10px;
         transition: all 0.3s;
-        @include flex(column, flex-start, flex-start, nowrap);
+        @include flex(row, center, flex-start, nowrap, 14px);
 
         &:hover {
-            padding: 10px 0 10px 10px;
-            
-            &:after {
-                width: 50px;
+            .header__searchResultIcon {
+                transform: rotate(-20deg) scale(1.1);
             }
         }
 
         &:active {
-            padding: 10px 0;
-            transition: all 0.2s;
+            .header__searchResultIcon {
+                transform: rotate(-10deg) scale(1);
+            }
         }
+    }
 
-        &:after {
-            content: "";
-            left: 0;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            position: absolute;
-            transition: all .3s;
-            background-color: #52d858;
-        }
+    &__searchResultIcon {
+        height: auto;
+        min-width: 24px;
+        transition: all 0.3s;
     }
 
     &__buttonMenu {
