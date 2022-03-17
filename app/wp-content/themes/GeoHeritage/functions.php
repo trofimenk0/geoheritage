@@ -81,7 +81,6 @@ function geoheritage_theme_setup() {
 
 add_action( 'wp_enqueue_scripts', 'geoheritage_enqueue_style' ); 
 function geoheritage_enqueue_style() {
-	wp_enqueue_style( 'geoheritage-lightgallery-style', 'https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0-beta.2/css/lightgallery-bundle.min.css', true );
     wp_enqueue_style( 'geoheritage-main-style', get_template_directory_uri() . '/resource/dist/css/main.css', true );
 }
 
@@ -90,10 +89,6 @@ function geoheritage_enqueue_script() {
 	wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js');
 	wp_enqueue_script( 'jquery' );
-
-	wp_enqueue_script( 'geoheritage-lightgallery-script', 'https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0-beta.2/lightgallery.min.js', array(), wp_get_theme()->get( 'Version' ), true );
-	wp_enqueue_script( 'geoheritage-lightgallery-thumbnail-script', 'https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0-beta.2/plugins/thumbnail/lg-thumbnail.umd.min.js', array(), wp_get_theme()->get( 'Version' ), true );
-	wp_enqueue_script( 'geoheritage-lightgallery-zoom-script', 'https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0-beta.2/plugins/zoom/lg-zoom.min.js', array(), wp_get_theme()->get( 'Version' ), true );
 
 	wp_enqueue_script( 'geoheritage-main-script', get_template_directory_uri() . '/resource/dist/js/main.js', array(), wp_get_theme()->get( 'Version' ), true );
 }
