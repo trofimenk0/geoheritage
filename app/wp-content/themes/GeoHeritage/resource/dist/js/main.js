@@ -63,34 +63,9 @@ $(function () {
     };
 
     /*
-     Gallery slider
+     Single Monument Gallery
     */
-    var geoMonumentSwiperSlider = new Swiper(".geoMonument__slider", {
-      slidesPerView: 1,
-      loop: true,
-      navigation: {
-        nextEl: ".geoMonument__sliderNavNext",
-        prevEl: ".geoMonument__sliderNavPrev",
-      },
-    });
-
-    /*
-     Gallery slider navigation action
-    */
-    $( '.geoMonument__galleryItem' ).on( 'click', function( event ) {
-      event.preventDefault();
-      $( '.geoMonument__slider' ).fadeIn( 500 );
-
-      let index = $(this).data('index');
-      if ( index ) {
-        geoMonumentSwiperSlider.slideTo(index);
-      }
-    } );
-
-    $( '.geoMonument__sliderClose' ).on( 'click', function( event ) {
-      event.preventDefault();
-      $( '.geoMonument__slider' ).fadeOut( 200 );
-    } );
+    
 
     /**
      * About partners emblems effect

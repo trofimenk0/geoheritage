@@ -70,7 +70,6 @@ function crb_create_fields() {
             )
         );
 
-
     /**
      * About page template fields
      */
@@ -117,7 +116,6 @@ function crb_create_fields() {
                     ) )
             )
         );
-
 }
 
 ?>

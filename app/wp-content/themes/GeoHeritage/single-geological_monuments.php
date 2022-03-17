@@ -32,7 +32,7 @@ while ( have_posts() ) :
         <?php
         $gallery = carbon_get_post_meta( get_the_ID(), 'geological_monument_gallery' );
 
-        if( $gallery ): 
+        if ( $gallery ): 
         $index = 0;
         ?>
             <section class="geoMonument__gallery">
@@ -48,7 +48,7 @@ while ( have_posts() ) :
                 </div>
             </section>
 
-            <section class="geoMonument__slider">
+            <!-- <section class="geoMonument__slider">
                 <button class="geoMonument__sliderClose">
                     <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M31.9998 31.9998L2 2" stroke="#14181F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -64,7 +64,7 @@ while ( have_posts() ) :
                 </div>
                 <div class="swiper-button-next geoMonument__sliderNavNext"></div>
                 <div class="swiper-button-prev geoMonument__sliderNavPrev"></div>
-            </section>
+            </section> -->
         <?php endif; ?>
 
     </main>
