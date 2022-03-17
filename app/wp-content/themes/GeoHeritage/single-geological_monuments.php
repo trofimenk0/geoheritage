@@ -47,24 +47,6 @@ while ( have_posts() ) :
                     <?php endforeach; ?>
                 </div>
             </section>
-
-            <!-- <section class="geoMonument__slider">
-                <button class="geoMonument__sliderClose">
-                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M31.9998 31.9998L2 2" stroke="#14181F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M31.9999 2L1.99995 32" stroke="#14181F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-                <div class="swiper-wrapper geoMonument__sliderWrapper">
-                    <?php foreach( $gallery as $image_id ): ?>
-                        <div class="swiper-slide geoMonument__sliderSlide">
-                            <img src="<?php echo wp_get_attachment_image_url( $image_id, 'full' ); ?>" alt="" class="geoMonument__sliderImage">
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-                <div class="swiper-button-next geoMonument__sliderNavNext"></div>
-                <div class="swiper-button-prev geoMonument__sliderNavPrev"></div>
-            </section> -->
         <?php endif; ?>
 
     </main>
