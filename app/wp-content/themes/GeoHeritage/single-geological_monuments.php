@@ -9,7 +9,7 @@ while ( have_posts() ) :
     if ( has_post_thumbnail() ) :
         $post_thumbnail = get_the_post_thumbnail_url( $monument_id, 'full' );
     else :
-        $post_thumbnail = get_template_directory_uri() . '/resource/dist/images/GoeMonumentImagePlaceholder.svg';
+        $post_thumbnail = get_template_directory_uri() . '/resource/dist/images/UkraineFlag.webp';
     endif;
     ?>
 
