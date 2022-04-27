@@ -95,23 +95,19 @@ $(function () {
 const geoheritageSlideDown = element => element.style.height = `${element.scrollHeight}px`;
 
 function regionReadMoreHandler() {
-   let button = document.querySelectorAll('.region__descriptionButton');
-   if (button.length <= 0) {
-       return;
-   }
+  let button = document.querySelectorAll('.region__descriptionButton');
+  if (button.length <= 0) {
+    return;
+  }
 
-   button.forEach(item => {
-       item.addEventListener('pointerdown', event => {
-           geoheritageSlideDown(item.closest('.region__descriptionContent'));
-           item.style.display = 'none';
-       });
-   });
+  button.forEach(item => {
+    item.addEventListener('pointerdown', event => {
+      geoheritageSlideDown(item.closest('.region__descriptionContent'));
+      item.style.display = 'none';
+    });
+  });
 }
 regionReadMoreHandler();
-
-
-
-
 
 
 

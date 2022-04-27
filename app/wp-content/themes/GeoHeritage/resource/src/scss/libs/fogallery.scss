@@ -1,0 +1,53 @@
+.fogalleryBox {
+    @include flex(row, center, center, wrap);
+
+    backdrop-filter: blur(20px);
+    background-color: rgb(255 255 255 / 30%);
+    bottom: 0;
+    height: 0;
+    left: 0;
+    opacity: 0;
+    padding: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    // transition: opacity 0.1s linear;
+    visibility: hidden;
+    width: 0;
+    z-index: -10;
+
+    &_visible {
+        height: 100%;
+        opacity: 1;
+        padding: 100px;
+        visibility: visible;
+        width: 100%;
+        z-index: 999;
+    }
+
+    &__inner {
+        height: 100%;
+        position: relative;
+        width: 100%;
+    }
+
+    &__image {
+        border-radius: 30px;
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: scale(0);
+        transition: transform 0.3s linear;
+        transition-delay: 0.1s;
+        width: 100%;
+        z-index: 0;
+
+        &_current {
+            transform: scale(1);
+        }
+    }
+}

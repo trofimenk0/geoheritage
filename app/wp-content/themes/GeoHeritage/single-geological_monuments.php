@@ -32,16 +32,15 @@ while ( have_posts() ) :
         <?php
         $gallery = carbon_get_post_meta( get_the_ID(), 'geological_monument_gallery' );
 
-        if ( $gallery ): 
-        $index = 0;
+        if ( $gallery ):
         ?>
             <section class="geoMonument__gallery">
                 <h2 class="geoMonument__galleryTitle">
                     Галерея:
                 </h2>
-                <div class="geoMonument__galleryContent">
+                <div class="geoMonument__galleryContent fogallery">
                     <?php foreach( $gallery as $image_id ): ?>
-                        <a href="javascript: void(0);" class="geoMonument__galleryItem" data-index="<?php echo ++$index; ?>">
+                        <a href="<?php echo wp_get_attachment_image_url( $image_id, 'full' ); ?>" class="geoMonument__galleryItem">
                             <img src="<?php echo wp_get_attachment_image_url( $image_id, 'medium' ); ?>" alt="" class="geoMonument__galleryImage">
                         </a>
                     <?php endforeach; ?>
