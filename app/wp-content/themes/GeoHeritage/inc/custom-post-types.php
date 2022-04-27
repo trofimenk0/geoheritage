@@ -125,7 +125,7 @@ function custom_geological_monuments_column( $column_name ) {
 				if ( has_post_thumbnail() ) {
 					the_post_thumbnail( 'thumbnail' );
 				} else {
-					echo '<img src="' . get_template_directory_uri() . '/resource/dist/images/GoeMonumentImagePlaceholder.svg" alt="Geological monument image" class="region__monumentsItemImage">';
+					echo '<img src="' . get_template_directory_uri() . '/resource/dist/images/UkraineFlag.webp" alt="Geological monument image" class="region__monumentsItemImage">';
 				}
 				?>
 			</a>
