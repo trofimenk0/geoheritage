@@ -6,6 +6,8 @@ $region_id          = $region->term_id;
 $region_description = get_the_archive_description();
 $region_emblem_id   = carbon_get_term_meta( $region_id, 'region_of_ukraine_emblem' );
 $region_emblem_url  = wp_get_attachment_image_url( $region_emblem_id, 'medium', true );
+
+$placeholder_image_id = carbon_get_theme_option( 'placeholder_image' );
 ?>
 
 <main class="region">
@@ -48,7 +50,7 @@ $region_emblem_url  = wp_get_attachment_image_url( $region_emblem_id, 'medium', 
                         if ( has_post_thumbnail() ) :
                             echo get_the_post_thumbnail( $id, 'medium', array( 'class' => 'region__monumentsItemImage' ) );
                         else :
-                            echo '<img src="' . get_template_directory_uri() . '/resource/dist/images/UkraineFlag.webp" alt="Geological monument image" class="region__monumentsItemImage">';
+                            echo '<img src="' . wp_get_attachment_image_url( $placeholder_image_id, 'thumbnail' ) . '" alt="Geological monument image" class="region__monumentsItemImage">';
                         endif;
                         ?>
                         

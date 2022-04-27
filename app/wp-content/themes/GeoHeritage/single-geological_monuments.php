@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php get_header();
+
+$placeholder_image_id = carbon_get_theme_option( 'placeholder_image' );
+?>
 
 <?php
 while ( have_posts() ) :
@@ -9,7 +12,7 @@ while ( have_posts() ) :
     if ( has_post_thumbnail() ) :
         $post_thumbnail = get_the_post_thumbnail_url( $monument_id, 'full' );
     else :
-        $post_thumbnail = get_template_directory_uri() . '/resource/dist/images/UkraineFlag.webp';
+        $post_thumbnail = wp_get_attachment_image_url( $placeholder_image_id, 'full' );
     endif;
     ?>
 

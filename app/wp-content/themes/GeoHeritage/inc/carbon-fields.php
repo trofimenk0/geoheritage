@@ -21,6 +21,8 @@ function crb_create_fields() {
             Field::make( 'text', 'copyright_text', __( 'Copyright Text' ) ),
             Field::make( 'separator', 'page_404_separator', __( 'Page 404' ) ),
             Field::make( 'image', 'page_404_image', __( 'Image' ) ),
+            Field::make( 'separator', 'image_placeholder_separator', __( 'Placeholder for monuments without images' ) ),
+            Field::make( 'image', 'placeholder_image', __( 'Image' ) ),
         ) );
 
 

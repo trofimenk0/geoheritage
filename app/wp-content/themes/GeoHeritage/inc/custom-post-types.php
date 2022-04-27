@@ -105,6 +105,9 @@ function set_custom_edit_geological_monuments_columns( $columns ) {
 */
 add_action( 'manage_geological_monuments_posts_custom_column' , 'custom_geological_monuments_column', 10, 2 );
 function custom_geological_monuments_column( $column_name ) {
+
+	$placeholder_image_id = carbon_get_theme_option( 'placeholder_image' );
+
 	switch ( $column_name ) {
 		case 'region_of_ukraine':
 			$regions_of_ukraine = get_the_terms( get_the_ID(), 'regions_of_ukraine' );
@@ -125,7 +128,7 @@ function custom_geological_monuments_column( $column_name ) {
 				if ( has_post_thumbnail() ) {
 					the_post_thumbnail( 'thumbnail' );
 				} else {
-					echo '<img src="' . get_template_directory_uri() . '/resource/dist/images/UkraineFlag.webp" alt="Geological monument image" class="region__monumentsItemImage">';
+					echo '<img src="' . wp_get_attachment_image_url( $placeholder_image_id, 'thumbnail' ) . '" alt="Geological monument image" class="region__monumentsItemImage">';
 				}
 				?>
 			</a>
