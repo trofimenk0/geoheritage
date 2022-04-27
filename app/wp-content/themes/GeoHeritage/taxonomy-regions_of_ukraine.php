@@ -24,6 +24,11 @@ $region_emblem_url  = wp_get_attachment_image_url( $region_emblem_id, 'medium', 
         <section class="region__description">
             <div class="region__descriptionContent">
                 <?php echo wp_kses_post( wpautop( $region_description ) ); ?>
+
+                <button class="region__descriptionButton">
+                    <?php _e( 'Більше...', 'geoheritage' ); ?>
+                    <svg class="region__descriptionButtonIcon" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg" class="header__menuItemArrow"><path d="M15.7071 1.70711C16.0976 1.31658 16.0976 0.683417 15.7071 0.292893C15.3166 -0.0976311 14.6834 -0.0976311 14.2929 0.292893L15.7071 1.70711ZM8 8L7.29289 8.70711C7.48043 8.89464 7.73478 9 8 9C8.26522 9 8.51957 8.89464 8.70711 8.70711L8 8ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976311 0.683417 -0.0976311 1.31658 0.292893 1.70711L1.70711 0.292893ZM14.2929 0.292893L7.29289 7.29289L8.70711 8.70711L15.7071 1.70711L14.2929 0.292893ZM8.70711 7.29289L1.70711 0.292893L0.292893 1.70711L7.29289 8.70711L8.70711 7.29289Z" fill="#52d858"/></svg>
+                </button>
             </div>
         </section>
     <?php endif; ?>
