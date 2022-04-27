@@ -9,6 +9,7 @@ app/wp-content/uploads/
 
 # languages
 app/wp-content/languages/
+app/wp-content/languages/*
 
 # log files
 *.log
