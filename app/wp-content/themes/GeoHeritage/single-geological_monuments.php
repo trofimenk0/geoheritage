@@ -41,7 +41,7 @@ while ( have_posts() ) :
                 <h2 class="geoMonument__galleryTitle">
                     Галерея:
                 </h2>
-                <div class="geoMonument__galleryContent fogallery">
+                <div class="geoMonument__galleryContent frogallery">
                     <?php foreach( $gallery as $image_id ): ?>
                         <a href="<?php echo wp_get_attachment_image_url( $image_id, 'full' ); ?>" class="geoMonument__galleryItem">
                             <img src="<?php echo wp_get_attachment_image_url( $image_id, 'medium' ); ?>" alt="" class="geoMonument__galleryImage">

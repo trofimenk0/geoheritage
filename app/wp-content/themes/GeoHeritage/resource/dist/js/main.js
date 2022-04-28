@@ -1,107 +1,108 @@
 /**
- * Fogallery
+ * Frogallery
  */
 document.addEventListener("DOMContentLoaded", function () {
-    class Fogallery {
+    class Frogallery {
 
-        domGalleryLinks = '';
-        galleryImageSrc = [];
-        fogalleryGenerated = '';
+        buttonClose;
+        domElement;
+        domElementLinks;
+        frogallery;
+        frogalleryImages = [];
 
-        constructor(domGallery) {
-            this.domGallery = document.querySelector(domGallery);
+        constructor(domElementSelector) {
+            this.domElement = document.querySelector(domElementSelector);
 
-            if (!this.validateMarkup()) {
-                return;
-            }
-
-            this.setProperties();
-            this.handleGalleryLinks();
-            this.generateFogallery();
-            this.attachFogallery();
-            this.initOpening();
-            this.initClosing();
+            this.init();
         }
 
-        attachFogallery() {
-            document.body.appendChild(this.fogalleryGenerated);
+        attachFrogallery() {
+            document.body.appendChild(this.frogallery);
         }
 
-        generateFogallery() {
-            // create fogalleryBox element
-            const fogalleryBox = document.createElement('div');
-            fogalleryBox.classList.add('fogalleryBox');
+        buildFrogallery() {
+            // create frogalleryBox element
+            const frogalleryBox = document.createElement('div');
+            frogalleryBox.classList.add('frogalleryBox');
 
-            fogalleryBox.appendChild(this.buttonClose);
+            // append button close
+            frogalleryBox.appendChild(this.buttonClose);
 
-            const fogalleryBoxInner = document.createElement('div');
-            fogalleryBoxInner.classList.add('fogalleryBox__inner');
+            // create and append inner
+            const frogalleryBoxInner = document.createElement('div');
+            frogalleryBoxInner.classList.add('frogalleryBox__inner');
 
-            fogalleryBox.appendChild(fogalleryBoxInner);
+            frogalleryBox.appendChild(frogalleryBoxInner);
 
-            // set all full size images for fogalleryBox
-            this.galleryImageSrc.forEach((item, index) => {
-                const image = document.createElement('img');
-                image.setAttribute('src', item);
-                image.classList.add(`fogalleryBox__image`);
-                image.classList.add(`fogalleryItem${index}`);
-
-                fogalleryBoxInner.appendChild(image);
+            // append images
+            this.frogalleryImages.forEach(item => {
+                frogalleryBoxInner.appendChild(item);
             });
 
             // set generated gallery as class property
-            this.fogalleryGenerated = fogalleryBox;
+            this.frogallery = frogalleryBox;
         }
 
-        handleGalleryLinks() {
-            this.domGalleryLinks.forEach((item, index) => {
+        handleDOMElement() {
+            this.domElementLinks.forEach((item, index) => {
                 item.dataset.src = item.href;
-                item.dataset.target = `fogalleryItem${index}`;
+                item.dataset.target = `frogalleryItem${index}`;
                 item.removeAttribute('href');
             });
         }
 
-        initClosing() {
-            const fogalleryImages = this.fogalleryGenerated.querySelectorAll('.fogalleryBox__image');
+        init() {
+            if (!this.validateMarkup()) {
+                return false;
+            }
 
+            this.setProperties();
+            this.handleDOMElement();
+            this.buildFrogallery();
+            this.attachFrogallery();
+            this.initEventOpen();
+            this.initEventClose();
+        }
+
+        initEventClose() {
             const onGalleryClose = () => {
-                fogalleryImages.forEach(item => {
-                    item.classList.remove('fogalleryBox__image_current');
+                this.frogalleryImages.forEach(item => {
+                    item.classList.remove('frogalleryBox__image_current');
                 });
 
                 setTimeout(() => {
-                    this.fogalleryGenerated.classList.remove('fogalleryBox_visible');
+                    this.frogallery.classList.remove('frogalleryBox_visible');
                 }, 500);
             }
 
-            this.fogalleryGenerated.addEventListener('pointerdown', event => {
-                if (!event.target.classList.contains('fogalleryBox')) {
-                    return;
-                }
-
+            // close on button click
+            this.buttonClose.addEventListener('pointerdown', event => {
                 onGalleryClose();
             });
 
-            this.buttonClose.addEventListener('pointerdown', event => {
+            // close on inner outside area click
+            this.frogallery.addEventListener('pointerdown', event => {
+                if (!event.target.classList.contains('frogalleryBox')) {
+                    return;
+                }
                 onGalleryClose();
             });
         }
 
-        initOpening() {
-            this.domGalleryLinks.forEach((item, index) => {
+        initEventOpen() {
+            this.domElementLinks.forEach((item, index) => {
                 item.addEventListener('pointerdown', event => {
                     event.preventDefault();
 
                     const target = item.dataset.target;
-                    const fogalleryImages = this.fogalleryGenerated.querySelectorAll('.fogalleryBox__image');
 
-                    this.fogalleryGenerated.classList.add('fogalleryBox_visible');
+                    this.frogallery.classList.add('frogalleryBox_visible');
 
-                    fogalleryImages.forEach(item => {
-                        item.classList.remove('fogalleryBox__image_current');
+                    this.frogalleryImages.forEach(item => {
+                        item.classList.remove('frogalleryBox__image_current');
 
                         if (item.classList.contains(target)) {
-                            item.classList.add('fogalleryBox__image_current');
+                            item.classList.add('frogalleryBox__image_current');
                         }
                     });
                 })
@@ -109,31 +110,36 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         setProperties() {
-            this.domGalleryLinks = this.domGallery.querySelectorAll(':scope > a');
+            this.domElementLinks = this.domElement.querySelectorAll(':scope > a');
 
-            this.domGalleryLinks.forEach(item => {
-                this.galleryImageSrc.push(item.href);
+            // create frogallery images from domElement a-tag href-attribute value
+            this.domElementLinks.forEach((item, index) => {
+                const image = document.createElement('img');
+                image.setAttribute('src', item.href);
+                image.classList.add(`frogalleryBox__image`);
+                image.classList.add(`frogalleryItem${index}`);
+
+                this.frogalleryImages.push(image);
             });
 
-            // add buttonClose to generated gallery
+            // create button close
             this.buttonClose = document.createElement('button');
-            this.buttonClose.classList.add('fogalleryBox__buttonClose');
-            this.buttonClose.innerHTML = `<svg class="fogalleryBox__buttonCloseIcon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            this.buttonClose.classList.add('frogalleryBox__buttonClose');
+            this.buttonClose.innerHTML = `<svg class="frogalleryBox__buttonCloseIcon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M19 19L1.00005 1" stroke="#52D858" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             <path d="M19.0001 1L1 19.0001" stroke="#52D858" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>`;
         }
 
         validateMarkup() {
-            if (!(this.domGallery instanceof Object)) {
+            if (!(this.domElement instanceof Object)) {
                 return false;
             }
             return true;
         }
-
     }
 
-    const fogallery = new Fogallery('.fogallery');
+    const frogallery = new Frogallery('.frogallery');
 });
 $(function () {
   /*
