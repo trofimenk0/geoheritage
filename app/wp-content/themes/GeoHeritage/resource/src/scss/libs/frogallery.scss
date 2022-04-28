@@ -19,7 +19,7 @@
     &_visible {
         height: 100%;
         opacity: 1;
-        padding: 100px;
+        padding: 6%;
         visibility: visible;
         width: 100%;
         z-index: 999;
@@ -55,20 +55,22 @@
     &__image {
         border-radius: 30px;
         bottom: 0;
-        height: 100%;
-        left: 0;
-        object-fit: cover;
+        height: auto;
+        left: 50%;
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
         position: absolute;
         right: 0;
-        top: 0;
-        transform: scale(0);
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0);
         transition: transform 0.3s linear;
         transition-delay: 0.1s;
-        width: 100%;
+        width: auto;
         z-index: 0;
 
         &_current {
-            transform: scale(1);
+            transform: translate(-50%, -50%) scale(1);
         }
     }
 
@@ -76,7 +78,7 @@
         @include flex(row, center, space-between, wrap);
 
         left: 0;
-        padding: 0 20px;
+        padding: 0 2%;
         position: absolute;
         top: 50%;
         transform: translate(0, -50%);
@@ -101,5 +103,54 @@
     &__navButtonIcon {
         height: 100%;
         width: 100%;
+    }
+
+    @media screen and (max-width: 1440px) {
+
+        &_visible {
+            padding: 60px 100px;
+        }
+
+        &__buttonClose {
+            right: 30px;
+            top: 30px;
+        }
+
+        &__nav {
+            padding: 0 30px;
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+
+        &__buttonClose {
+            right: 20px;
+            top: 20px;
+        }
+
+        &__nav {
+            padding: 0 20px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+
+        &_visible {
+            padding: 60px 80px;
+        }
+
+        &__buttonClose {
+            height: 40px;
+            width: 40px;
+        }
+
+        &__image {
+            border-radius: 20px;
+        }
+
+        &__navButton {
+            height: 40px;
+            width: 40px;
+        }
     }
 }
