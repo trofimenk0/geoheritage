@@ -25,6 +25,23 @@
         z-index: 999;
     }
 
+    &__buttonClose {
+        @include flex(row, center, center, wrap);
+
+        background-color: transparent;
+        border: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        right: 40px;
+        top: 40px;
+    }
+
+    &__buttonCloseIcon {
+        height: 30px;
+        width: 30px;
+    }
+
     &__inner {
         height: 100%;
         position: relative;

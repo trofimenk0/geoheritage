@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const fogalleryBox = document.createElement('div');
             fogalleryBox.classList.add('fogalleryBox');
 
+            fogalleryBox.appendChild(this.buttonClose);
+
             const fogalleryBoxInner = document.createElement('div');
             fogalleryBoxInner.classList.add('fogalleryBox__inner');
 
@@ -47,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 fogalleryBoxInner.appendChild(image);
             });
 
+            // set generated gallery as class property
             this.fogalleryGenerated = fogalleryBox;
         }
 
@@ -61,11 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
         initClosing() {
             const fogalleryImages = this.fogalleryGenerated.querySelectorAll('.fogalleryBox__image');
 
-            this.fogalleryGenerated.addEventListener('pointerdown', event => {
-                if (!event.target.classList.contains('fogalleryBox')) {
-                    return;
-                }
-
+            const onGalleryClose = () => {
                 fogalleryImages.forEach(item => {
                     item.classList.remove('fogalleryBox__image_current');
                 });
@@ -73,6 +72,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 setTimeout(() => {
                     this.fogalleryGenerated.classList.remove('fogalleryBox_visible');
                 }, 500);
+            }
+
+            this.fogalleryGenerated.addEventListener('pointerdown', event => {
+                if (!event.target.classList.contains('fogalleryBox')) {
+                    return;
+                }
+
+                onGalleryClose();
+            });
+
+            this.buttonClose.addEventListener('pointerdown', event => {
+                onGalleryClose();
             });
         }
 
@@ -103,6 +114,14 @@ document.addEventListener("DOMContentLoaded", function () {
             this.domGalleryLinks.forEach(item => {
                 this.galleryImageSrc.push(item.href);
             });
+
+            // add buttonClose to generated gallery
+            this.buttonClose = document.createElement('button');
+            this.buttonClose.classList.add('fogalleryBox__buttonClose');
+            this.buttonClose.innerHTML = `<svg class="fogalleryBox__buttonCloseIcon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M19 19L1.00005 1" stroke="#52D858" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M19.0001 1L1 19.0001" stroke="#52D858" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>`;
         }
 
         validateMarkup() {
