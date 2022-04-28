@@ -106,10 +106,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         validateMarkup() {
-            if (!this.domGallery instanceof Object) {
+            if (!(this.domGallery instanceof Object)) {
                 return false;
             }
-
             return true;
         }
 
