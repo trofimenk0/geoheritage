@@ -282,11 +282,13 @@ $(function () {
   /**
    * Mobile menu
    */
-  $('.header__buttonMenu').on('focus', function () {
-    if (!$('.header__primaryMenu').hasClass('header__primaryMenu_active')) {
-      $('.header__primaryMenu').addClass('header__primaryMenu_active').css('display', 'flex').hide().fadeIn(300);
+  $('.header__buttonMenu').on('pointerdown', function () {
+    if ($('.header__primaryMenu').hasClass('header__primaryMenu_active')) {
+      $('.header__primaryMenu').removeClass('header__primaryMenu_active').fadeOut(300);
       return;
     }
+
+    $('.header__primaryMenu').addClass('header__primaryMenu_active').css('display', 'flex').hide().fadeIn(300);
   });
 
   $(document).on('click', function (event) {
