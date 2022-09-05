@@ -17,7 +17,6 @@ while ( have_posts() ) :
     ?>
 
     <main class="geoMonument">
-
         <section class="geoMonument__banner" style="background-image: url(<?php echo $post_thumbnail; ?>)">
             <h1 class="geoMonument__title"><?php the_title(); ?></h1>
 
@@ -35,12 +34,12 @@ while ( have_posts() ) :
         <?php
         $gallery = carbon_get_post_meta( get_the_ID(), 'geological_monument_gallery' );
 
-        if ( $gallery ):
-        ?>
+        if ( $gallery ) : ?>
             <section class="geoMonument__gallery">
                 <h2 class="geoMonument__galleryTitle">
                     Галерея:
                 </h2>
+
                 <div class="geoMonument__galleryContent frogallery">
                     <?php foreach( $gallery as $image_id ): ?>
                         <a href="<?php echo wp_get_attachment_image_url( $image_id, 'full' ); ?>" class="geoMonument__galleryItem">
@@ -50,11 +49,7 @@ while ( have_posts() ) :
                 </div>
             </section>
         <?php endif; ?>
-
     </main>
-
 <?php endwhile; ?>
-
-
 
 <?php get_footer(); ?>

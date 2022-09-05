@@ -29,7 +29,6 @@ while ( have_posts() ) :
     ?>
 
     <main class="pageAbout">
-
         <!-- Banner -->
         <section class="aboutBanner" style="background-image: url( '<?php echo wp_get_attachment_image_url( $banner_bg_image, 'large', true ); ?>' );">
             <div class="aboutBanner__content">
@@ -47,7 +46,6 @@ while ( have_posts() ) :
          * Parnters section
          */
         if ( ! empty( $about_page_partners ) ) : ?>
-
             <section class="aboutPartners">
                 <div class="aboutPartners__content">
                     <h2 class="aboutPartners__title">
@@ -55,7 +53,6 @@ while ( have_posts() ) :
                     </h2>
 
                     <?php foreach ( $about_page_partners as $partner ) : ?>
-                        
                         <div class="aboutPartners__item">
                             <div class="aboutPartners__itemLogoWrapper">
                                 <img src="<?php echo wp_get_attachment_image_url( $partner['logo'], 'medium', true ); ?>" alt="" class="aboutPartners__itemLogo">
@@ -79,11 +76,9 @@ while ( have_posts() ) :
                                 </a>
                             </div>
                         </div>
-                        
                     <?php endforeach; ?>
                 </div>
             </section>
-
         <?php endif; ?>
 
         <!-- Developer -->
@@ -107,29 +102,22 @@ while ( have_posts() ) :
                     </div>
 
                     <?php if ( ! empty( $about_page_developer_socials ) ) : ?>
-
                         <div class="aboutDeveloper__socials">
                             <?php foreach ( $about_page_developer_socials as $social ) : ?>
-
                                 <a href="<?php echo $social['link']; ?>" class="aboutDeveloper__socialsItem" rel="nofollow" target="_blank">
                                     <img src="<?php echo wp_get_attachment_image_url( $social['logo'], 'large', true ); ?>" alt="" class="aboutDeveloper__socialsItemLogo">
                                 </a>
-
                             <?php endforeach; ?>
                         </div>
-
                     <?php endif; ?>
                 </div>
 
                 <div class="aboutDeveloper__photoWrapper">
                     <img src="<?php echo wp_get_attachment_image_url( $about_page_developer_photo, 'large', true ); ?>" alt="" class="aboutDeveloper__photo">
                 </div>
-
             </div>
         </section>
-
     </main>
-
 <?php
 /**
  * End of the loop.

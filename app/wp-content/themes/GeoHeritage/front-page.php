@@ -2,9 +2,7 @@
 
 <?php
 if ( have_posts() ) {
-
 	while ( have_posts() ) {
-
 		the_post();
 
         /**
@@ -19,14 +17,11 @@ if ( have_posts() ) {
          * Home page description fields
          */
         $description_text = carbon_get_the_post_meta( 'front_page_description_text' );
-
 	}
-    
 }
 ?>
 
 <main class="homePage">
-
     <!-- Banner -->
     <section class="homeBanner" style="background-image: url( '<?php echo wp_get_attachment_image_url( $banner_bg_image, 'full', true ); ?>' );">
         <div class="homeBanner__content">
@@ -46,7 +41,6 @@ if ( have_posts() ) {
 
     <!-- Regions -->
     <section class="homeRegions">
-        
             <?php $regions_of_ukraine = get_categories( [
                 'taxonomy'     => 'regions_of_ukraine',
                 'type'         => 'post',
@@ -63,12 +57,9 @@ if ( have_posts() ) {
             ] );
 
             if ( $regions_of_ukraine ) { ?>
-
                 <div class="homeRegions__list">
-
                     <?php
                     foreach ( $regions_of_ukraine as $region ) {
-
                         $region_name = $region->name;
                         $region_id   = $region->term_id;
                         $region_url  = get_category_link( $region_id );
@@ -76,7 +67,6 @@ if ( have_posts() ) {
                         $region_emblem_id  = carbon_get_term_meta( $region_id, 'region_of_ukraine_emblem' );
                         $region_emblem_url = wp_get_attachment_image_url( $region_emblem_id, 'regions-emblems-small', true );
                         ?>
-
                         <a href="<?php echo $region_url; ?>" class="homeRegions__region">
                             <img src="<?php echo $region_emblem_url; ?>" alt="" class="homeRegions__regionImage">
                             <svg class="homeRegions__regionIconLink" width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -87,17 +77,10 @@ if ( have_posts() ) {
                                 <?php echo $region_name; ?>
                             </div>
                         </a>
-                        
                     <?php } ?>
-                    
                 </div>
             <?php } ?>
-
     </section>
-
 </main>
-
-
-
 
 <?php get_footer(); ?>

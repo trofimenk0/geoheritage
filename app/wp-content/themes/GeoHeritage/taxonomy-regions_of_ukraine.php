@@ -11,7 +11,6 @@ $placeholder_image_id = carbon_get_theme_option( 'placeholder_image' );
 ?>
 
 <main class="region">
-
     <!-- Banner -->
     <section class="region__banner">
         <img src="<?php echo $region_emblem_url; ?>" alt="" class="region__emblem">
@@ -44,7 +43,6 @@ $placeholder_image_id = carbon_get_theme_option( 'placeholder_image' );
         <div class="region__monumentsList">
             <?php if ( have_posts() ) :
                 while ( have_posts() ) : the_post(); ?>
-            
                     <a href="<?php the_permalink(); ?>" class="region__monumentsItem" data-depth="0.2">
                         <?php 
                         if ( has_post_thumbnail() ) :
@@ -62,19 +60,15 @@ $placeholder_image_id = carbon_get_theme_option( 'placeholder_image' );
                             </svg>
                         </div>
                     </a>
-
             <?php endwhile;
 
             else : ?>
-
                 <p class="region__monumentsNotFound">
                     <?php _e( 'Геопам\'ятки в процесі створення.', 'geoheritage' ); ?>
                 </p>
-
             <?php endif; ?>
         </div>
     </section>
-
 </main>
 
 <?php get_footer(); ?>
